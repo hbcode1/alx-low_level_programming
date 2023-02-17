@@ -15,16 +15,16 @@ int main(void)
 {
 	/* declare n */
 	int n;
-	/* init n form 48 (dec of 0 in ascii) */
-	n = 48;
+	/* init n form 0 */
+	n = 0;
 	/* print numbers */
-	while (n < 58)
+	while (n < 10)
 	{
-		putchar(n);
+		printf("%d", n);
 		/* increment n */
 		n++;
 	}
 	/* print new line */
-	putchar(10);
+	printf("\n");
 	return (0);
 }
