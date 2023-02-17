@@ -16,14 +16,14 @@ int main(void)
 	int n;
 	/* init n form 97 (dec of a in ascii) */
 	n = 97;
-	/* print alphabet*/
+	/* print alphabet */
 	while (n < 123)
 	{
 		putchar(n);
-		/* increment n*/
+		/* increment n */
 		n++;
 	}
-	/* print new line*/
+	/* print new line */
 	putchar(10);
 	return (0);
 }
