@@ -32,7 +32,7 @@ int main(void)
 		{
 			putchar(a);
 			putchar(b);
-			if (n < 56)
+			if (a < 56)
 			{
 				/* print comma followed by whitespace */
 				putchar(44);
