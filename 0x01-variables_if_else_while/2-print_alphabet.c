@@ -21,4 +21,5 @@ int main(void)
 	}
 	/* print new line*/
 	putchar(10);
+	return (0);
 }
