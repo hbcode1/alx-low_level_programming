@@ -1,7 +1,12 @@
 #include <stdlib.h>
 #include <time.h>
 #include <stdio.h>
-/* more headers goes there */
+/*
+ * This program will assign a random number
+ * to the variable n each time it is executed.
+ * Then print the last digit of the number stored in the variable n.
+ *
+ */
 
 /**
  * main -Entry point
