@@ -17,14 +17,14 @@ int main(void)
 	/* if statement */
 	if (n > 0)
 	{
-		printf("\d is greater than 0", n);
+		printf("%d is greater than 0", n);
 	}
 	else if (n < 0)
 	{
-		printf("\d is less than 0", n);
+		printf("%d is less than 0", n);
 	}
 	else
 	{
-		printf("\d is zero", n);
+		printf("%d is zero", n);
 	return (0);
 }
