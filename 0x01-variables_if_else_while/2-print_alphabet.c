@@ -1,5 +1,9 @@
 #include <stdio.h>
-/* more headers goes there */
+/*
+ * This program prints the alphabet in lowercase,
+ * followed by a new line.
+ *
+ */
 
 /**
  * main -Entry point
@@ -15,9 +19,9 @@ int main(void)
 	/* print alphabet*/
 	while (n < 123)
 	{
-	putchar(n);
-	/* increment n*/
-	n++;
+		putchar(n);
+		/* increment n*/
+		n++;
 	}
 	/* print new line*/
 	putchar(10);
