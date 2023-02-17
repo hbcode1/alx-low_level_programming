@@ -1,5 +1,10 @@
 #include <stdio.h>
-/* This program prints the alphabet in lowercase, and then in uppercase, followed by a new line. */
+/*
+ * This program prints the alphabet in lowercase,
+ * and then in uppercase,
+ * followed by a new line.
+ *
+ */
 
 /**
  * main -Entry point
@@ -10,21 +15,21 @@ int main(void)
 {
 	/* declare n */
 	int n;
-	/* init n form 65 (dec of A in ascii) */
-	n = 65;
+	/* init n form 97 (dec of a in ascii) */
+	n = 97;
 	/* print alphabet */
 	while (n < 123)
 	{
-		if (n > 90 && n < 97)
-		{
-			n++;
-		}
-		else
-		{
-			putchar(n);
-			/* increment n */
-			n++;
-		}
+		putchar(n);
+		/* increment n */
+		n++;
+	}
+	n = 65;
+	while (n < 91)
+	{
+		putchar(n);
+		/* increment n */
+		n++;
 	}
 	/* print new line */
 	putchar(10);
