@@ -1,14 +1,11 @@
 #include <stdio.h>
 /*
- * This program prints all possible combinations of single-digit numbers.
- * starting from 0,
- * followed by a new line.
+ * This program prints all possible combinations of two digits.
  * Numbers must be separated by ,, followed by a space
- * Numbers should be printed in ascending order
- * You can only use the putchar function
- * All your code should be in the main function
- * You can only use putchar four times maximum in your code
- * You are not allowed to use any variable of type char
+ * The two digits must be different
+ * 01 and 10 are considered the same combination
+ * Print only the smallest combination of two digits
+ * Numbers should be printed in ascending order, with two digits
  */
 
 /**
@@ -30,6 +27,7 @@ int main(void)
 		b = a + 1;
 		while (b < 58)
 		{
+			/* print ab */
 			putchar(a);
 			putchar(b);
 			if (a < 56)
