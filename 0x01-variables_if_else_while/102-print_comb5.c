@@ -38,7 +38,7 @@ int main(void)
 			if (a <= 58 && b <= 57)
 			{
 				putchar(44);
-				putchar(10);
+				putchar(32);
 			}
 		}
 		j++; /* increment j */
