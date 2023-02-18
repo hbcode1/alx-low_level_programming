@@ -17,13 +17,14 @@ int main(void)
 {
 	/* declaration */
 	int a, b, i, j;
-	/* init a, b, i and j from 48 (dec of 0 in ascii) */
-	a = b = i = j = 48;
+	/* init a and b from 48 (dec of 0 in ascii) */
+	a = b = 48;
 	/* print numbers */
 	while (a < 58)
 	{
 	while (b < 58)
 	{
+	i = j = 48 ;
 	while (i < 58)
 	{
 	while (j < 58)
