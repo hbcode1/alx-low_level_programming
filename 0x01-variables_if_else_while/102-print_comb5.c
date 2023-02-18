@@ -36,7 +36,7 @@ int main(void)
 			putchar(32);
 			putchar(i);
 			putchar(j);
-			if (a <= 57 && b <= 56)
+			if (a < 58 && b < 57)
 			{
 				putchar(44);
 				putchar(32);
