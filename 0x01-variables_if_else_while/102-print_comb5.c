@@ -44,11 +44,12 @@ int main(void)
 		j++; /* increment j */
 	}
 	j = 48; /* reset j */
+	}
 	i++; /* increment i*/
 	b++; /* increment b */
 	}
 	a++; /* increment a */
 	}
-	putchar(10);/* print new line */
+	putchar(10); /* print new line */
 	return (0);
 }
