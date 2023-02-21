@@ -5,7 +5,7 @@
  * followed by a new line.
  *
  * Return: void
- * @n: start point
+ * @n: starting point
  */
 
 void print_to_98(int n)
@@ -16,11 +16,15 @@ void print_to_98(int n)
 	{
 		for (i = n; i <= 98; i++)
 		{
-			printf("%d", i);
 			if (i != 98)
 			{
+				printf("%d", i);
 				_putchar(44);
 				_putchar(32);
+			}
+			else
+			{
+				printf("%d", i);
 			}
 		}
 	}
@@ -28,12 +32,17 @@ void print_to_98(int n)
 	{
 		for (i = n; i >= 98; i--)
 		{
-			printf("%d", i);
 			if (i != 98)
 			{
+				printf("%d", i);
 				_putchar(44);
 				_putchar(32);
 			}
+			else
+			{
+				printf("%d", i);
+			}
+
 		}
 	}
 	_putchar(10);
