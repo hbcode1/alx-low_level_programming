@@ -3,9 +3,9 @@
  * _abs - computes the absolute value of an integer
  *
  * Return: absolute int
- * @int: integer to be computed
+ * @num: integer to be computed
  */
-int _abs(int)
+int _abs(int num)
 {
-	return (int *int);
+	return (num * num);
 }
