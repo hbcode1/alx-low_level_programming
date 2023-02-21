@@ -1,4 +1,4 @@
-#include <stdio.h>
+#include "main.h"
 /**
  * main - check the code
  *
@@ -6,6 +6,6 @@
  */
 int main(void)
 {
-	putchar('_putchar');
+	_putchar("_putchar");
 	return (0);
 }
