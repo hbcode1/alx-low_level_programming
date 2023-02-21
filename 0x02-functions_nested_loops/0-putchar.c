@@ -1,11 +1,11 @@
 #include "main.h"
 /**
- * main - write "_putchar" using write function
+ * main - Print "_putchar" using _putchar()
  *
  * Return: Always 0.
  */
 int main(void)
 {
-	write(1, "_putchar\n", 9);
+	putchar(95);
 	return (0);
 }
