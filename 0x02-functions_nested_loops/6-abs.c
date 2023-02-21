@@ -1,4 +1,5 @@
 #include "main.h"
+#include <math.h>
 /**
  * _abs - computes the absolute value of an integer
  *
@@ -7,5 +8,5 @@
  */
 int _abs(int num)
 {
-	return (num * num);
+	return (pow(pow(num, 2), 0.5));
 }
