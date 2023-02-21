@@ -12,9 +12,11 @@ void times_table(void)
 		for (j = 0; j < 10; j++)
 		{
 			c = i * j;
-			if (c / n)
+			if (c / 10)
+			{
 				_putchar((n/10)%10 + '0');
-				_putchar(c%10 + '0');
+			}
+			_putchar(c%10 + '0');
 		}
 		_putchar(10);
 
