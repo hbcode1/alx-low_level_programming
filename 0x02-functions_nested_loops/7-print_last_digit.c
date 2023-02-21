@@ -7,6 +7,6 @@
  */
 int print_last_digit(int num)
 {
-	_putchar(_abs(num % 10));
+	_putchar('_abs(num % 10)');
 	return (_abs(num % 10));
 }
