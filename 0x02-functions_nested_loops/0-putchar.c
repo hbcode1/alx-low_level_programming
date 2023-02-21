@@ -1,6 +1,6 @@
 #include "main.h"
 /**
- * main - check the code
+ * main - call _putchar func
  *
  * Return: Always 0.
  */
