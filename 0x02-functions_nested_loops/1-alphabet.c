@@ -6,6 +6,10 @@
  */
 void print_alphabet(void)
 {
-	write(1, "abcdefghijklmnopqrstuvwxyz\n", 27);
+	for(i = 97; i < 123; i++)
+	{
+		_putchar(i);
+	}
+	_putchar(10);
 }
 
