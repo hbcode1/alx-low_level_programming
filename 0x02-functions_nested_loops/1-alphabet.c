@@ -4,8 +4,8 @@
  *
  * Return: void.
  */
-void print_alphabet()
+void print_alphabet(void)
 {
-	write(1, "abcdefghijklmnopqrstuvwxyz\n",27);
+	write(1, "abcdefghijklmnopqrstuvwxyz\n", 27);
 }
 
