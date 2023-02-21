@@ -1,4 +1,5 @@
 #include "main.h"
+#include <unistd.h>
 /**
  * times_table - prints the 9 times table, starting with 0.
  * Return: value of the last digit
@@ -11,7 +12,7 @@ void times_table(void)
 	{
 		for (j = 0; j < 10; j++)
 		{
-			_putchar(i * j + '0');
+			write(1, i * j, sizeof(i * j));
 		}
 		_putchar(10);
 
