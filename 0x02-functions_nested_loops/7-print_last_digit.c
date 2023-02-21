@@ -7,5 +7,5 @@
  */
 int print_last_digit(int num)
 {
-	return (_abs(num) % 10);
+	return (_abs(num % 10));
 }
