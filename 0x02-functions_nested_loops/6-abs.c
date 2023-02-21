@@ -8,7 +8,7 @@
  */
 int _abs(int num)
 {
-	double pow(double, int);
+	pow(double, double);
 
 	return (pow(pow(num, 2), 0.5));
 }
