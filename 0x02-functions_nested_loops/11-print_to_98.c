@@ -26,5 +26,5 @@ void print_to_98(int n)
 			printf("%d, ", i);
 		}
 	}
-	_putchar(10);
+	printf("\n");
 }
