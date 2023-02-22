@@ -9,20 +9,20 @@
  */
 int main(void)
 {
-	long int s, i, j;
+	long int s, i, j, sum;
 
 	i = 0;
 	j = 1;
+	sum = 0;
 	while (j < 4000000)
 	{
 		s = i;
 		i = j;
 		j = i + s;
 		if (!(j % 2))
-			printf("%ld", j);
-		if (j < 1000000)
-			printf(", ");
+			sum = sum + j;
 	}
+	printf("%ld", sum);
 	printf("\n");
 	return (0);
 }
