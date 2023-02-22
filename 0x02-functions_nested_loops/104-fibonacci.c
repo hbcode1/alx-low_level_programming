@@ -10,7 +10,7 @@ int main(void)
 {
 	int a;
 
-	long double i, j, s;
+	unsigned long int i, j, s;
 
 	i = 0;
 	j = 1;
@@ -19,7 +19,7 @@ int main(void)
 		s = i;
 		i = j;
 		j = i + s;
-		printf("%Ld", j);
+		printf("%lu", j);
 		if (a != 98)
 			printf(", ");
 	}
