@@ -22,6 +22,12 @@ void print_times_table(int n)
 				_putchar(32);
 				if (!(c / 10))
 					_putchar(32);
+				if (!(c / 100))
+					_putchar(32);
+			}
+			if (c / 100)
+			{
+				_putchar((c / 100) % 10 + '0');
 			}
 			if (c / 10)
 			{
