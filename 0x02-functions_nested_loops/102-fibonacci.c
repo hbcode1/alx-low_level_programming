@@ -9,7 +9,7 @@
  */
 int main(void)
 {
-	int a, s, i, j;
+	long int a, s, i, j;
 
 	i = 0;
 	j = 1;
