@@ -12,7 +12,8 @@
 
 void print_remaining_days(int month, int day, int year)
 {
-	/* Leap year: each year that is an integer multiple of 4
+	/*
+	 * Leap year: each year that is an integer multiple of 4
 	 * except for years evenly divisible by 100, but not by 400
 	 */
 
