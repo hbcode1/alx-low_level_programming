@@ -20,7 +20,7 @@ int main(void)
 		if (j / 10)
 		{
 			printf("%ld", j / 10);
-			_putchar(j % 10 + '0');
+			printf("%ld", j % 10);
 		}
 		if (a != 98)
 			printf(", ");
