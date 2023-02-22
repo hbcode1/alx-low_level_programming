@@ -20,7 +20,7 @@ int main(void)
 		j = i + s;
 		printf("%ld", j);
 		if (a != 50)
-			printf(", ", j);
+			printf("\, ", j);
 	}
 	printf("\n");
 	return (0);
