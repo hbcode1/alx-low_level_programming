@@ -11,14 +11,14 @@ int main(void)
 {
 	int a, s, i, j;
 
-	i = 1;
-	j = 2;
+	i = 0;
+	j = 1;
 	for (a = 1 ; a <= 50; a++)
 	{
 		s = i;
 		i = j;
 		j = i + s;
-		printf("%d, ", j);
+		printf("%ld, ", j);
 	}
 	printf("\n");
 	return (0);
