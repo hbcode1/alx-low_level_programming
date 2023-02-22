@@ -19,7 +19,7 @@ int main(void)
 		s = i;
 		i = j;
 		j = i + s;
-		printf("%Lf", j);
+		printf("%Ld", j);
 		if (a != 98)
 			printf(", ");
 	}
