@@ -8,7 +8,7 @@
  */
 int main(void)
 {
-	long int a, s, i, j;
+	unsigned long int a, s, i, j;
 
 	i = 0;
 	j = 1;
@@ -17,8 +17,7 @@ int main(void)
 		s = i;
 		i = j;
 		j = i + s;
-		if(j % 10000000000000000000)
-			printf("%ld", j);
+		printf("%uld", j);
 		if (a != 98)
 			printf(", ");
 	}
