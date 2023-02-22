@@ -17,10 +17,10 @@ int main(void)
 		s = i;
 		i = j;
 		j = i + s;
-		if (j / 1000)
+		if (j / 1000000000000000)
 		{
-			printf("%ld", j / 1000);
-			printf("%ld", j % 1000);
+			printf("%ld", j / 1000000000000000);
+			printf("%ld", j % 1000000000000000);
 		}
 		else 
 		{
