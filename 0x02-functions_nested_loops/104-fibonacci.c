@@ -8,7 +8,7 @@
  */
 int main(void)
 {
-	long long int a, s, i, j;
+	long int a, s, i, j;
 
 	i = 0;
 	j = 1;
@@ -17,7 +17,7 @@ int main(void)
 		s = i;
 		i = j;
 		j = i + s;
-		printf("%lld", j);
+		printf("%ld", j);
 		if (a != 98)
 			printf(", ");
 	}
