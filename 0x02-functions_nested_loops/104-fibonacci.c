@@ -17,15 +17,7 @@ int main(void)
 		s = i;
 		i = j;
 		j = i + s;
-		if (j / 1000000000000000)
-		{
-			printf("%ld", j / 1000000000000000);
-			printf("%ld", j % 1000000000000000);
-		}
-		else 
-		{
 			printf("%ld", j);
-		}
 		if (a != 98)
 			printf(", ");
 	}
