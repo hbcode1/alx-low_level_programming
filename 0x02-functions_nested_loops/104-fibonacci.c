@@ -21,7 +21,7 @@ int main(void)
 		{
 			printf("%ld", j / 10);
 		}
-		_putchar(n % j + '0');
+		_putchar(j % 10 + '0');
 		if (a != 98)
 			printf(", ");
 	}
