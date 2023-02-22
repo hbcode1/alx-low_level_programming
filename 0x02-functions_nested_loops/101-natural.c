@@ -1,13 +1,13 @@
 #include <stdio.h>
 #include "main.h"
 /**
- * print_1024 - computes and prints the sum
+ * main - computes and prints the sum
  * of all the multiples of 3 or 5 below 1024 (excluded),
  * followed by a new line.
  *
- * Return: void
+ * Return: Always 0
  */
-void print_1024(void)
+int main(void)
 {
 	int i;
 
@@ -19,4 +19,5 @@ void print_1024(void)
 		}
 	}
 	printf("\n");
+	return (0);
 }
