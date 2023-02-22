@@ -9,15 +9,16 @@
  */
 int main(void)
 {
-	int i;
+	int i, sum;
 
+	sum = 0;
 	for (i = 1 ; i < 1024; i++)
 	{
 		if (!(i % 3) || !(i % 5))
 		{
-			printf("%d", i);
+			sum = sum + i;
 		}
 	}
-	printf("\n");
+	printf("%d\n", sum);
 	return (0);
 }
