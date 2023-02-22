@@ -9,13 +9,14 @@
  */
 int main(void)
 {
-	int i, j;
+	int a, i, j;
 
 	i = 1;
 	j = 2;
-	for (i = 1 ; i <= 50; i++)
+	for (a = 1 ; a <= 50; a++)
 	{
-		j = j + i;
+		j = i + (i - 1);
+		i++;
 		printf("%d, ", j);
 	}
 	printf("\n");
