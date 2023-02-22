@@ -17,7 +17,11 @@ int main(void)
 		s = i;
 		i = j;
 		j = i + s;
-		printf("%ld", j);
+		if (j / 10)
+		{
+			printf("%ld", j / 10);
+		}
+		_putchar(n % j + '0');
 		if (a != 98)
 			printf(", ");
 	}
