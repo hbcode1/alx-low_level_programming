@@ -8,7 +8,7 @@
  */
 int main(void)
 {
-	unsigned long int a, s, i, j;
+	int unsigned long  a, s, i, j;
 
 	i = 0;
 	j = 1;
@@ -17,7 +17,7 @@ int main(void)
 		s = i;
 		i = j;
 		j = i + s;
-		printf("%uld", j);
+		printf("%lu", j);
 		if (a != 98)
 			printf(", ");
 	}
