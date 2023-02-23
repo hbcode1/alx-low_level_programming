@@ -1,13 +1,13 @@
 #include "main.h"
 
 /**
- * print_most_numbers - prints the numbers,
- * from 0 to 9, exclude 2 and 4
+ * more_numbers - prints 10 times the numbers,
+ * from 0 to 14,
  * followed by a new line.
  * Return: void
  */
 
-void print_most_numbers(void)
+void more_numbers(void)
 {
 	int line, i, j;
 
