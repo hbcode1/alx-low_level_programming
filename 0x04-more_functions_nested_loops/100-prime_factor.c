@@ -13,9 +13,8 @@ int isprime(int x);
 
 int main(void)
 {
-	unsigned long int number = 612852475143;
+	unsigned long int i, number = 612852475143;
 	int temprime = 2;
-	int i;
 
 	for (i = 2; i <= number / 10000000; i++)
 	{
