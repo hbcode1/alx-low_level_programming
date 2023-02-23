@@ -4,7 +4,6 @@
  * main - finds and prints the largest prime factor
  * of the number 612852475143,
  * followed by a new line.
- * isprime - check if number is prime
  * @x: to check if prime
  * Return: 0 success
  */
@@ -27,10 +26,14 @@ int main(void)
 			}
 		}
 	}
-	printf("%lu", number);
+	printf("%lu\n", number);
 	return (0);
 }
-
+/**
+ * isprime - check if number is prime
+ * @x: to check if prime
+ * Return: 0 False, 1 True
+ */
 int isprime(int x)
 {
 	int mult, i;
