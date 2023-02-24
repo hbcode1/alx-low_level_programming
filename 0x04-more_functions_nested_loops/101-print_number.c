@@ -7,7 +7,7 @@
 int find_length(int n)
 {
 	int l, i;
-
+	l = 1;
 	for (i = 0; i <= 10; i++)
 	{
 		if (n / 10)
