@@ -19,6 +19,7 @@ int find_length(int n)
 			break;
 	}
 	return (l);
+}
 /**
  * print_number - prints an integer.
  * @n: number to print
