@@ -1,47 +1,48 @@
 #include "main.h"
+/**
+ * find_length - find length of a number
+ * @n: number to check
+ * Return: length
+ */
+int find_length(int n)
+{
+	int l, i;
 
+	for (i = 0; i <= 10; i++)
+	{
+		if (n / 10)
+		{
+			l = l + 1;
+			n = n / 10;
+		}
+		else
+			break;
+	}
+	return (l);
 /**
  * print_number - prints an integer.
  * @n: number to print
  * Return: void
  */
-
 void print_number(int n)
 {
-	int i, j, k;
+	int max_l, i, max;
 
 	if (n < 0)
 	{
-		_putchar(45);
 		n = -n;
+		_putchar(45);
 	}
-	for (i = 1000000000; i > 9; i /= 10)
+
+	max_l = find_length(n), max = 1;
+	for (i = 1; i < max_l; i++)
 	{
-		if (n == i)
-		{
-			_putchar(49);
-			for (k = n; k > 9; k /= 10)
-			{
-				_putchar(48);
-			}
-			break;
-		}
-		else if (n / i && n > i)
-		{
-			_putchar((n / i) + '0');
-			n = n % i;
-			if (n < i / 10)
-			{
-				for (j = i / 10; j > 9; j /= 10)
-				{
-					if (n < j)
-						_putchar(48);
-				}
-			}
-		}
+		max *= 10;
 	}
-	if (n < 10)
+	for (; max > 1; max /= 10)
 	{
-		_putchar(n + '0');
+		_putchar(n / max + '0');
+		n = n % max;
 	}
+	_putchar(n / max + '0');
 }
