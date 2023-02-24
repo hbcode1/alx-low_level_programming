@@ -7,6 +7,7 @@
 int find_length(unsigned int n)
 {
 	unsigned int l, i;
+
 	l = 1;
 	for (i = 0; i <= 10; i++)
 	{
@@ -27,9 +28,8 @@ int find_length(unsigned int n)
  */
 void print_number(int n)
 {
-	unsigned int max_l, max, m;
-	int i;
-	
+	unsigned int max_l, max, m, i;
+
 	m = n;
 	if (n < 0)
 	{
