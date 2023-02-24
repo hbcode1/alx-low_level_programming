@@ -4,9 +4,9 @@
  * @n: number to check
  * Return: length
  */
-int find_length(int n)
+int find_length(unsigned int n)
 {
-	int l, i;
+	unsigned int l, i;
 	l = 1;
 	for (i = 0; i <= 10; i++)
 	{
@@ -27,23 +27,25 @@ int find_length(int n)
  */
 void print_number(int n)
 {
-	int max_l, i, max;
-
+	unsigned int max_l, max, m;
+	int i;
+	
+	m = n;
 	if (n < 0)
 	{
-		n = -n;
+		m = -n;
 		_putchar(45);
 	}
 
-	max_l = find_length(n), max = 1;
+	max_l = find_length(m), max = 1;
 	for (i = 1; i < max_l; i++)
 	{
 		max *= 10;
 	}
 	for (; max > 1; max /= 10)
 	{
-		_putchar(n / max + '0');
-		n = n % max;
+		_putchar(m / max + '0');
+		m = m % max;
 	}
-	_putchar(n / max + '0');
+	_putchar(m / max + '0');
 }
