@@ -15,7 +15,7 @@ void print_number(int n)
 		_putchar(45);
 		n = -n;
 	}
-	for (i = 1000000; i > 9; i /= 10)
+	for (i = 1000000000000; i > 9; i /= 10)
 	{
 		if (n == i)
 		{
