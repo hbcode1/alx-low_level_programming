@@ -8,7 +8,7 @@
  */
 void rev_string(char *s)
 {
-	char arr[_strlen(s) + 1];
+	char arr[];
 	int i, j, len;
 
 	len = _strlen(s) + 1;
