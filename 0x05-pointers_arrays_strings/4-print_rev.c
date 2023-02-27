@@ -15,7 +15,7 @@ void print_rev(char *s)
 		i = max;
 		while (i > 0)
 		{
-			putchar(* (str + i));
+			putchar(* (s + i));
 			i--;
 		}
 		putchar(10);
