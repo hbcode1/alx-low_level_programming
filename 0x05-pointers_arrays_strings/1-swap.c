@@ -9,12 +9,12 @@
 
 void swap_int(int *a, int *b)
 {
-	int x;
-	int *c;
+	int x; /* init x */
+	int *c; /* add a pointer to int */
 
-	c = &x;
-	*c = *a;
-	*a = *b;
+	c = &x; /* store addrs of x in c */
+	*c = *a;	/* replace addrs of x by addrx of a */
+	*a = *b; 
 	*b = *c;
 
 }
