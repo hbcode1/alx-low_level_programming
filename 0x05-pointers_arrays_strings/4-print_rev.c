@@ -13,7 +13,7 @@ void print_rev(char *s)
 
 		max = _strlen(s) - 1;
 		i = max;
-		while (i > 0)
+		while (i >= 0)
 		{
 			putchar(*(s + i));
 			i--;
