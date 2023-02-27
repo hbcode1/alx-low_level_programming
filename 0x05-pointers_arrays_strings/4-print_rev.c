@@ -11,9 +11,9 @@ void print_rev(char *s)
 {
 		int max, i;
 
-		max = _strlen(s);
+		max = _strlen(s) - 1;
 		i = max;
-		while (i >= 0)
+		while (i > 0)
 		{
 			putchar(*(s + i));
 			i--;
