@@ -8,20 +8,20 @@
  */
 void rev_string(char *s)
 {
-	char arr[_strlen(str) + 1];
+	char arr[_strlen(s) + 1];
 	int i, j, len;
 
-	len = _strlen(str) + 1;
+	len = _strlen(s) + 1;
 	j = len - 2;
 	for (i = 0; i < len; i++)
 	{
-		arr[i] = *(str + j);
+		arr[i] = *(s + j);
 		j--;
 	}
 	j = len - 2;
 	for (i = 0; i < len; i++)
 	{
-		*(str + j) = arr[j];
+		*(s + j) = arr[j];
 		j--;
 	}
 }
