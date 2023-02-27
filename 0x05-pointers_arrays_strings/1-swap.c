@@ -14,7 +14,7 @@ void swap_int(int *a, int *b)
 
 	c = &x; /* store addrs of x in c */
 	*c = *a;	/* replace addrs of x by addrx of a */
-	*a = *b; 
+	*a = *b;
 	*b = *c;
 
 }
