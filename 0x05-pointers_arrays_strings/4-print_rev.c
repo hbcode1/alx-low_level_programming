@@ -2,9 +2,9 @@
 #include "main.h"
 #include "2-strlen.c"
 /**
- * print_rev - rints a string, in reverse, 
+ * print_rev - rints a string, in reverse,
  * followed by a new line, to stdout.
- * @str: string to print
+ * @s: string to print
  * Return: void
  */
 void print_rev(char *s)
@@ -13,9 +13,9 @@ void print_rev(char *s)
 
 		max = _strlen(s);
 		i = max;
-		while (i > 0)
+		while (i >= 0)
 		{
-			putchar(* (s + i));
+			putchar(*(s + i));
 			i--;
 		}
 		putchar(10);
