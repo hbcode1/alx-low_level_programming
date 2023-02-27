@@ -16,11 +16,11 @@ void  puts2(char *str)
 	{
 		if (i % 2)
 		{
-			putchar(*(str + i));
 			i++;
 		}
 		else
 		{
+			putchar(*(str + i));
 			i++;
 		}
 	}
