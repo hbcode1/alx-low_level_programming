@@ -15,7 +15,7 @@ int _atoi(char *s)
 	for (i = 0; i <= len; i++)
 	{
 		if (*(s + i) == '-')
-			minus++;
+			minus *= -1;
 		if (*(s + i) >= 48 && *(s + i) <= 57)
 		{
 			i++;
