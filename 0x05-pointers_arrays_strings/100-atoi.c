@@ -50,8 +50,6 @@ int _atoi(char *s)
 	}
 	/* add sign */
 	if (minus % 2)
-	{
 		number = -number;
-	}
 	return (number);
 }
