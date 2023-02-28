@@ -8,8 +8,8 @@
  */
 int _atoi(char *s)
 {
-	unsigned int number = 0;
-	int len = _strlen(s), i, max = 1, minus;
+	unsigned int number = 0, max = 1;
+	int len = _strlen(s), i, minus;
 
 	minus = 0, i = 0;
 	for (i = 0; i <= len; i++)
