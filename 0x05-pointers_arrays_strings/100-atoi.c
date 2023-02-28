@@ -10,28 +10,24 @@ int _atoi(char *s)
 {
 	unsigned int number = 0, max = 1;
 	int len = _strlen(s), i, minus;
-
-	minus = 0, i = 0;
+	/* get sign and number length */
+	minus = 1, i = 0;
 	for (i = 0; i <= len; i++)
 	{
 		if (*(s + i) == '-')
 			minus++;
 		if (*(s + i) >= 48 && *(s + i) <= 57)
-			break;
-	}
-	for (i = 0; i <= len; i++)
-	{
-		if (*(s + i) >= 48 && *(s + i) <= 57)
 		{
+			i++;
 			while (*(s + i) >= 48 && *(s + i) <= 57)
 			{
 				max *= 10;
 				i++;
 			}
-			max /= 10;
 			break;
 		}
 	}
+	/* get number */
 	for (i = 0; i <= len; i++)
 	{
 		if (*(s + i) >= 48 && *(s + i) <= 57)
@@ -45,7 +41,6 @@ int _atoi(char *s)
 			break;
 		}
 	}
-	if (minus % 2)
-		number = -number;
+	number *= minus;
 	return (number);
 }
