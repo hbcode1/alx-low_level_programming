@@ -23,7 +23,7 @@ int _atoi(char *s)
 	/* eleminate junk */
 	for (i = 0; i <= len; i++)
 	{
-		if (*s(s + i) >= 48 && *(s + i) <= 57)
+		if (*(s + i) >= 48 && *(s + i) <= 57)
 		{
 			while (*(s + i) >= 48 && *(s + i) <= 57)
 			{
@@ -37,7 +37,7 @@ int _atoi(char *s)
 	/* get the number */
 	for (i = 0; i <= len; i++)
 	{
-		if (*s(s + i) >= 48 && *(s + i) <= 57)
+		if (*(s + i) >= 48 && *(s + i) <= 57)
 		{
 			while (*(s + i) >= 48 && *(s + i) <= 57)
 			{
