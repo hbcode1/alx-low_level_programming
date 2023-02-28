@@ -9,7 +9,7 @@
 int _atoi(char *s)
 {
 	int minus; /* represent - signs */
-	unsigned int number = 0;
+	unsigned long int number = 0;
 	int len = _strlen(s), i, max = 1;
 	/* eleminate signs */
 	minus = 0, i = 0;
