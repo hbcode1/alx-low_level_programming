@@ -3,7 +3,7 @@
 /**
  * _strncpy - copies a string.
  * @src: source string
- * @dest: destination string,
+ * @dest: destination string
  * @n: bytes
  * Return: pointer to the resulting string dest.
  */
