@@ -10,6 +10,12 @@ char *cap_string(char *str)
 {
 	int i = 0, j = 0;
 	char separators[] = ",;.!?\"(){}\n\t ";
+
+	/* capitalize first word*/
+	if (str[0] >= 97 && str[0] <= 122)
+	{
+		str[0] = str[0] - 32;
+	}
 	/* iterate until null */
 	while (str[j] != '\0')
 	{
@@ -40,4 +46,3 @@ char *cap_string(char *str)
 	}
 	return (str);
 }
-
