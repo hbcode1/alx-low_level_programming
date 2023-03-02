@@ -23,7 +23,8 @@ char *cap_string(char *str)
 			/* if it s a sepa print it */
 			/* printf("%d\n",str[j]);*/
 			/* if whats next is letter */
-			if (str[j + 1] > 64 && str[j + 1] < 123)
+			if ((str[j + 1] >= 65 && str[j + 1] <= 90) ||
+					(str[j + 1] >= 97 && str[j + 1] <= 122))
 			{
 				/* if whats next is lower*/
 				if (str[j + 1] >= 97 && str[j + 1] <= 122)
