@@ -6,7 +6,7 @@
  * Return: encoded string.
  */
 
-char *leet(char *str)
+char *rot13(char *str)
 {
 	int i = 0, j = 0;
 	char letters[] = "ABCDEFGHIJKLMabcdefghijklmNOPQRSTUVWXYZnopqrstuvwxyz";
