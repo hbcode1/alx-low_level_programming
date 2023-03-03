@@ -9,7 +9,7 @@
 
 int add(int a, int b)
 {
-	int x;
+	int x = 0;
 	int sum = 0;
 
 	sum = a + b + x;
@@ -17,7 +17,7 @@ int add(int a, int b)
 	return (sum % 10);
 }
 /**
- * infinit_add - adds two numbers.
+ * infinite_add - adds two numbers.
  * @n1: first number.
  * @n2: second number.
  * @r: the buffer that the function zwill use to store the result
@@ -25,7 +25,7 @@ int add(int a, int b)
  * Return: pointer to the result
  * 0 if the result can not be stored in r
  */
-char *infinit_add(char *n1, char *n2, char *r, int size_r)
+char *infinite_add(char *n1, char *n2, char *r, int size_r)
 {
 	int i = 0, j = 1;
 	int size_n1 = 0;
