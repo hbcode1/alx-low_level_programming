@@ -55,7 +55,7 @@ char *_strstr(char *haystack, char *needle)
 			{
 				haystack--;
 			}
-			break;
+			return (haystack);
 		}
 		else
 		{
@@ -68,5 +68,5 @@ char *_strstr(char *haystack, char *needle)
 			temp_len = 0, i = 0;
 		}
 	}
-	return (haystack);
+	return ('\0');
 }
