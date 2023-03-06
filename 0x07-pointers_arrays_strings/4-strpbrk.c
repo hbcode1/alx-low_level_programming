@@ -23,10 +23,10 @@ char *_strpbrk(char *s, char *accept)
 		}
 		if (*s == *(accept + i))
 		{
-			break;
+			return (s);
 		}
 		i = 0;
 		s++;
 	}
-	return (s);
+	return ('\0');
 }
