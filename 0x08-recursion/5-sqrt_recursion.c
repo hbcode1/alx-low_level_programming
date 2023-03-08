@@ -35,6 +35,9 @@ int _sqrt_recursion(int n)
 	/* eleminate 0 */
 	if (n == 0)
 		return (0);
+	/* eleminate 1 */
+	if (n == 1)
+		return (1);
 	/* eleminate negative numbers */
 	if (n < 0)
 		return (-1);
