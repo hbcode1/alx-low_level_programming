@@ -31,7 +31,7 @@ int is_prime_number(int n)
 	/* 1 neither is a prime or composite */
 	/* primes are posirive */
 	if (n <= 1)
-		return (1);
+		return (0);
 	/* The perfect prime */
 	if (n == 2)
 		return (1);
