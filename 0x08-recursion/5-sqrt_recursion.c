@@ -20,7 +20,7 @@ int _sqrt_root(int n, int p)
 	{
 		return (-1);
 	}
-	return (_sqrt_root(n, p - 1));
+	return (0 + _sqrt_root(n, p - 1));
 }
 
 /**
