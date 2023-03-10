@@ -1,24 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <ctype.h>
-/**
- * is_number - check if string can be converted to a number.
- * @n: string.
- * Return:
- * 1 number
- * 0 not number
- */
-
-int is_number(char *n)
-{
-	while (*n != '\0')
-	{
-		if (isdigit(*n) == 0)
-			return (0);
-		n++;
-	}
-	return (1);
-}
 
 /**
  * main - adds positive numbers
@@ -33,12 +15,12 @@ int main(int argc, char **argv)
 	int i, money, coins;
 	int change [] = {25, 10, 5, 2, 1};
 
-	if (argc != 2 || !is_number(argv[1]))
+	if (argc != 2)
 	{
 		printf("Error\n");
 		return (1);
 	}
-	else if (atoi(argv[1]) < 0)
+	if (atoi(argv[1]) < 0)
 	{
 		printf("0\n");
 	}
