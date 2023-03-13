@@ -11,7 +11,7 @@
  */
 int **alloc_grid(int width, int height)
 {
-	int **a, i, j;
+	int **a, i, j, f;
 	/* case w or h <= 0 */
 	if (width <= 0 || height <= 0)
 		return (NULL);
@@ -22,20 +22,20 @@ int **alloc_grid(int width, int height)
 		return (NULL);
 	}
 	/* allocate arrays */
-	for (i = 0; i < width - 1; i++)
+	for (i = 0; i < width; i++)
 	{
 		a[i] = malloc(sizeof(int) * height);
 		/* if failed free and retrun null*/
 		if (a[i] == NULL)
 		{
-			for (; i >= 0; i--)
-				free(a[i]);
+			for (f = i; i >= 0; f--)
+				free(a[f]);
 			free(a);
 			return (NULL);
 		}
 		/* fill arrays */
 		j = 0;
-		while (j < height - 1)
+		while (j < height)
 		{
 			a[i][j] = 0;
 			j++;
