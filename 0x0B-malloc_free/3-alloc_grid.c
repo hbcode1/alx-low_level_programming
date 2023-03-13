@@ -22,7 +22,7 @@ int **alloc_grid(int width, int height)
 		return (NULL);
 	}
 	/* allocate arrays */
-	for (i = 0; i < width; i++)
+	for (i = 0; i < width - 1; i++)
 	{
 		a[i] = malloc(sizeof(int) * height);
 		/* if failed free and retrun null*/
@@ -35,7 +35,7 @@ int **alloc_grid(int width, int height)
 		}
 		/* fill arrays */
 		j = 0;
-		while (j < height)
+		while (j < height - 1)
 		{
 			a[i][j] = 0;
 			j++;
