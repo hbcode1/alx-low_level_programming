@@ -7,7 +7,7 @@
  * @size: size of the array.
  * @c: character to fill it with.
  * Return:
- * - NULL: if size is 0 oor if program fails.
+ * - NULL: if size is 0 or if NULL fails.
  * - pointer to the array.
  */
 
@@ -16,9 +16,9 @@ char *create_array(unsigned int size, char c)
 	char *a;
 	unsigned int i = 0;
 
-	if (size == 0)
-		return (NULL);
 	a = malloc(sizeof(char) * (size + 1));
+	if (s == NULL)
+		return (NULL);
 	while (i < size)
 	{
 		a[i] = c;
