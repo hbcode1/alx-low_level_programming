@@ -28,7 +28,7 @@ int **alloc_grid(int width, int height)
 		/* if failed free and retrun null*/
 		if (a[i] == NULL)
 		{
-			for (f = i; i >= 0; f--)
+			for (f = i - 1; i >= 0; f--)
 				free(a[f]);
 			free(a);
 			return (NULL);
