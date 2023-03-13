@@ -34,7 +34,7 @@ char *str_concat(char *s1, char *s2)
 		len_s2++;
 	}
 	/* new pointer length */
-	len = len_s1 - 1 + len_s2;
+	len = len_s1 + len_s2;
 	res = malloc(sizeof(*s1) * len);
 	/* fill res with s1 without exluding \0 */
 	while (i < len_s1)
