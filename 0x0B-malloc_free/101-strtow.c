@@ -1,0 +1,47 @@
+#include "main.h"
+#include <stdlib.h>
+#include <stdio.h>
+/**
+* count_words - counts words in string separated by spaces.
+* @s: string.
+* Return: number of words.
+*/
+int count_words(char *str)
+{
+int i,count;
+while(*(str + i) != '\0')
+{
+while (*(str + i) == ' ' && *(str + i) != '\0')
+{
+i++;
+}
+if (*(str + i) != ' ')
+while (*(str + i) != ' ' && *(str + i) != '\0')
+{
+i++;
+}
+count++;
+}
+return count;
+}
+/**
+* strtow - splits a string into words.
+* @str: string to split.
+* Return:
+* - NULL if str == NULL or str == "" or Failur.
+* - Pointer to an array of strings (words).
+*/
+char **strtow(char *str)
+{
+char **a;
+int count;
+
+/* count words plus extra*/
+count = count_words(str);
+a = malloc(sizeof(char **) * count);
+if (a == NULL)
+return (NULL);
+printf("count: %d\n",count);
+return (a);
+}
+
