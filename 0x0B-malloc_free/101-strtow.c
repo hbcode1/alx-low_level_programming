@@ -3,13 +3,14 @@
 #include <stdio.h>
 /**
 * count_words - counts words in string separated by spaces.
-* @s: string.
+* @str: string.
 * Return: number of words.
 */
 int count_words(char *str)
 {
-int i,count;
-while(*(str + i) != '\0')
+int i, count;
+
+while (*(str + i) != '\0')
 {
 while (*(str + i) == ' ' && *(str + i) != '\0')
 {
@@ -22,7 +23,7 @@ i++;
 }
 count++;
 }
-return count;
+return (count);
 }
 /**
 * strtow - splits a string into words.
@@ -36,12 +37,13 @@ char **strtow(char *str)
 char **a;
 int count;
 
+if (str == NULL || str == "")
+	return (NULL);
 /* count words plus extra*/
 count = count_words(str);
 a = malloc(sizeof(char **) * count);
 if (a == NULL)
 return (NULL);
-printf("count: %d\n",count);
+printf("count: %d\n", count);
 return (a);
 }
-
