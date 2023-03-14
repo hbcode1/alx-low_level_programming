@@ -1,6 +1,7 @@
 #include "main.h"
 #include <stdlib.h>
 #include <stdio.h>
+#include <string.h>
 /**
 * count_words - counts words in string separated by spaces.
 * @str: string.
@@ -37,7 +38,7 @@ char **strtow(char *str)
 char **a;
 int count;
 
-if (str == NULL || str == "")
+if (str == NULL || strcmp(str,""))
 	return (NULL);
 /* count words plus extra*/
 count = count_words(str);
