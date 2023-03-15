@@ -12,11 +12,9 @@ int count_words(char *str)
 
 	while (*(str + i) != '\0')
 	{
-		while (*(str + i) == ' ' && *(str + i) != '\0')
-		{
+		if (*(str + i) == ' ')
 			i++;
-		}
-		if (*(str + i) != ' ' && *(str + i) != '\0')
+		else
 		{
 			while (*(str + i) != ' ' && *(str + i) != '\0')
 			{
