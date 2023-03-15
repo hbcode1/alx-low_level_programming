@@ -37,7 +37,7 @@ char **strtow(char *str)
 char **a;
 int count;
 
-if (str == NULL || *str = '\0')
+if (str == NULL || *str == '\0')
 	return (NULL);
 /* count words plus extra*/
 count = count_words(str);
