@@ -47,7 +47,6 @@ if (count == 0)
 	return (NULL);
 a = malloc(sizeof(char **) * count);
 if (a == NULL)
-return (NULL);
-
+	return (NULL);
 return (a);
 }
