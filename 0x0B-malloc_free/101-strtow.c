@@ -43,7 +43,7 @@ if (str == NULL || *str == '\0')
 	return (NULL);
 /* count words plus extra*/
 count = count_words(str);
-if (count == 0)
+if (count == 1)
 	return (NULL);
 a = malloc(sizeof(char **) * count);
 if (a == NULL)
