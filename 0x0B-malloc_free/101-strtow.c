@@ -8,22 +8,24 @@
 */
 int count_words(char *str)
 {
-int i, count;
+	int i, count;
 
-while (*(str + i) != '\0')
-{
-while (*(str + i) == ' ' && *(str + i) != '\0')
-{
-i++;
-}
-if (*(str + i) != ' ')
-while (*(str + i) != ' ' && *(str + i) != '\0')
-{
-i++;
-}
-count++;
-}
-return (count);
+	while (*(str + i) != '\0')
+	{
+		while (*(str + i) == ' ' && *(str + i) != '\0')
+		{
+			i++;
+		}
+		if (*(str + i) != ' ')
+		{
+			while (*(str + i) != ' ' && *(str + i) != '\0')
+			{
+				i++;
+			}
+			count++;
+		}
+	}
+	return (count);
 }
 /**
 * strtow - splits a string into words.
@@ -41,7 +43,7 @@ if (str == NULL || *str == '\0')
 	return (NULL);
 /* count words plus extra*/
 count = count_words(str);
-if (count == 1)
+if (count == 0)
 	return (NULL);
 a = malloc(sizeof(char **) * count);
 if (a == NULL)
