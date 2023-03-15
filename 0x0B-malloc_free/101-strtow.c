@@ -8,7 +8,7 @@
 */
 int count_words(char *str)
 {
-	int i, count;
+	int i, count = 0;
 
 	while (*(str + i) != '\0')
 	{
@@ -48,5 +48,6 @@ if (count == 0)
 a = malloc(sizeof(char **) * count);
 if (a == NULL)
 	return (NULL);
+a[count - 1] = NULL;
 return (a);
 }
