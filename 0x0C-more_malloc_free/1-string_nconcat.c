@@ -25,8 +25,8 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	if (s2 == NULL)
 		s2 = "";
 	/* case n greater or equal to the length of s2 */
-	if (n >= sizeof(s2))
-		n = sizeof(s2);
+	if (n >= strlen(s2) + 1)
+		n = strlen(s2) + 1;
 	/* get the allocation size */
 	size = sizeof(char) * (strlen(s1) + n);
 	/* allocate pointer to new string*/
