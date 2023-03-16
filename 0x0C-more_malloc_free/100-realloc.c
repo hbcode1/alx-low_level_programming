@@ -29,13 +29,10 @@ void *_realloc(void *ptr, unsigned int os, unsigned int ns)
 		free(ptr);
 		return (NULL);
 	}
-	/* get the minimum size */
-	min = os ? os < ns : ns;
-	
 	/* case ptr is null = malloc(new size) */
 	if (ptr == NULL)
 	{
-		mem = malloc(min);
+		mem = malloc(ns);
 		if (mem == NULL)
 			return (mem);
 	}
