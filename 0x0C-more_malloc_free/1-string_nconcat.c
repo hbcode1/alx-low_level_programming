@@ -28,7 +28,7 @@ if (s2 == NULL)
 if (n >= strlen(s2))
 	n = strlen(s2);
 /* get the allocation size */
-size = sizeof(char) * (strlen(s1) + n + 1);
+size = (strlen(s1) + n + 1) * sizeof(char);
 /* allocate pointer to new string*/
 new_str = malloc(size);
 /* handle malloc return */
@@ -38,7 +38,7 @@ if (new_str == NULL)
 for (i = 0; i < strlen(s1); i++)
 	new_str[i] = s1[i];
 /* copy the second string */
-for (; i < size; i++)
+for (; i < size - 1; i++)
 {
 new_str[i] = *s2;
 s2++;
