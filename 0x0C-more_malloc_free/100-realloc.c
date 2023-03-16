@@ -19,7 +19,6 @@
 void *_realloc(void *ptr, unsigned int os, unsigned int ns)
 {
 	void *mem;
-	unsigned int min;
 	/* case old size same as old size */
 	if (ns == os)
 		return (ptr);
