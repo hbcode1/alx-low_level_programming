@@ -15,15 +15,15 @@
 */
 void *_calloc(unsigned int nmemb, unsigned int size)
 {
-void *mem;
+	void *mem;
 
-if (nmemb == 0 || size == 0)
+	if (nmemb == 0 || size == 0)
 	return (NULL);
-/* allocate memory */
-mem = malloc(size * nmemb);
-if (mem == NULL)
+	/* allocate memory */
+	mem = malloc(size * nmemb);
+	if (mem == NULL)
+		return (mem);
+	/* set memory to 0 */
+	memset(mem, 0, nmemb * size);
 	return (mem);
-/* set memory to 0 */
-memset(mem, 0 , nmemb * size);
-return (mem);
 }
