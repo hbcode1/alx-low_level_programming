@@ -20,27 +20,33 @@ void *_realloc(void *ptr, unsigned int os, unsigned int ns)
 {
 	void *mem;
 	unsigned int min;
-
-if (ns == os)
-	return (ptr);
-if (ptr != NULL && ns == 0)
-{
-free(ptr);
-return (NULL);
-}
-min = os ? os < ns : ns;
-if (ptr == NULL)
-{
-mem = malloc(min);
-if (mem == NULL)
+	/* case old size same as old size */
+	if (ns == os)
+		return (ptr);
+	/* case new size is 0 */
+	if (ptr != NULL && ns == 0)
+	{
+		free(ptr);
+		return (NULL);
+	}
+	/* get the minimum size */
+	min = os ? os < ns : ns;
+	
+	/* case ptr is null = malloc(new size) */
+	if (ptr == NULL)
+	{
+		mem = malloc(min);
+		if (mem == NULL)
+			return (mem);
+	}
+	/* case ns > os allocate new space */
+	if (ns > os)
+	{
+		mem = malloc(ns);
+		if (mem == NULL)
+			return (NULL);
+		/* dispose of ptr */
+		free(ptr);
+	}
 	return (mem);
-}
-if (ns > os)
-{
-mem = malloc(ns);
-if (mem == NULL)
-	return (NULL);
-free(ptr);
-}
-return (mem);
 }
