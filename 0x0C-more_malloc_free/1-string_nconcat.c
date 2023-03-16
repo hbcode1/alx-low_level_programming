@@ -28,7 +28,7 @@ if (s2 == NULL)
 if (n >= strlen(s2) + 1)
 	n = strlen(s2) + 1;
 /* get the allocation size */
-size = sizeof(char) * (strlen(s1) + n);
+size = sizeof(char) * (strlen(s1) + n + 1);
 /* allocate pointer to new string*/
 new_str = malloc(size);
 /* handle malloc return */
