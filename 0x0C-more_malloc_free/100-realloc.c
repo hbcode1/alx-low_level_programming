@@ -39,6 +39,10 @@ void *_realloc(void *ptr, unsigned int os, unsigned int ns)
 	mem = malloc(ns);
 	if (mem == NULL)
 		return (NULL);
+	for (i = 0; i < os; i++)
+	{
+		mem[i] = ptr[i];
+	}
 	/* dispose of ptr */
 	free(ptr);
 	return (mem);
