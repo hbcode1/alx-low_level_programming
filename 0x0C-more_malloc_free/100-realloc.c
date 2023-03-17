@@ -39,7 +39,7 @@ void *_realloc(void *ptr, unsigned int os, unsigned int ns)
 		if (mem == NULL)
 			return (mem);
 		free(ptr);
-		return (NULL);
+		return (mem);
 	}
 	mem = malloc(ns);
 	if (mem == NULL)
