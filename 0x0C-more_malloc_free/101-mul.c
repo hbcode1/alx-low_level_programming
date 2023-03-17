@@ -12,13 +12,13 @@
 
 int is_number(char *n)
 {
-while (*n != '\0')
-{
-if (isdigit(*n) == 0)
-return (0);
-n++;
-}
-return (1);
+	while (*n != '\0')
+	{
+		if (isdigit(*n) == 0)
+			return (0);
+		n++;
+	}
+	return (1);
 }
 
 /**
@@ -32,26 +32,27 @@ return (1);
 
 int main(int ac, char *av[])
 {
-int n1, n2;
-if (ac != 3)
-{
-printf("Error\n");
-exit(98);
-}
-else
-{
-if (is_number(av[1]) && is_number(av[2]))
-{
-n1 = atoi(av[1]), n2 = atoi(av[2]);
-n1 = n1;
-n2 = n2;
-_putchar(10);
-return (0);
-}
-else
-{
-printf("Error\n");
-exit(98);
-}
-}
+	int n1, n2;
+
+	if (ac != 3)
+	{
+		printf("Error\n");
+		exit(98);
+	}
+	else
+	{
+		if (is_number(av[1]) && is_number(av[2]))
+		{
+			n1 = atoi(av[1]), n2 = atoi(av[2]);
+			n1 = n1;
+			n2 = n2;
+			_putchar(10);
+			return (0);
+		}
+		else
+		{
+			printf("Error\n");
+			exit(98);
+		}
+	}
 }
