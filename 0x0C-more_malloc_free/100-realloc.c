@@ -36,14 +36,10 @@ void *_realloc(void *ptr, unsigned int os, unsigned int ns)
 			return (mem);
 		free(ptr);
 	}
-	/* case ns > os allocate new space */
-	if (ns > os)
-	{
-		mem = malloc(ns);
-		if (mem == NULL)
-			return (NULL);
-		/* dispose of ptr */
-		free(ptr);
-	}
+	mem = malloc(ns);
+	if (mem == NULL)
+		return (NULL);
+	/* dispose of ptr */
+	free(ptr);
 	return (mem);
 }
