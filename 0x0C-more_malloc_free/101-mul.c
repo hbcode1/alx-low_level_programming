@@ -36,7 +36,12 @@ int main(int ac, char *av[])
 
 	if (ac != 3)
 	{
-		printf("Error\n");
+		_putchar(69);
+		_putchar(114);
+		_putchar(114);
+		_putchar(111);
+		_putchar(114);
+		_putchar(10);
 		exit(98);
 	}
 	else
@@ -51,7 +56,12 @@ int main(int ac, char *av[])
 		}
 		else
 		{
-			printf("Error\n");
+			putchar(69);
+			_putchar(114);
+			_putchar(114);
+			_putchar(111);
+			_putchar(114);
+			_putchar(10);
 			exit(98);
 		}
 	}
