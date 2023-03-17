@@ -21,6 +21,7 @@ void *_realloc(void *ptr, unsigned int os, unsigned int ns)
 	char *mem, *p;
 	unsigned int i;
 
+	/* store void to char */
 	p = ptr;
 	/* case old size same as old size */
 	if (ns == os)
@@ -38,6 +39,7 @@ void *_realloc(void *ptr, unsigned int os, unsigned int ns)
 		if (mem == NULL)
 			return (mem);
 		free(ptr);
+		return (NULL);
 	}
 	mem = malloc(ns);
 	if (mem == NULL)
