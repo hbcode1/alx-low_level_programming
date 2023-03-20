@@ -16,14 +16,14 @@ dog_t *new_dog(char *name, float age, char *owner)
 	dog_t *d;
 
 	/* eleminate unneeded values */
-	if (*name == '\0' || age <= 0 || *owner == '\0')
+	if (name == NULL || age <= 0 || owner == NULL)
 		return (NULL);
 
 	/* allocate memory for d */
 	d = malloc(sizeof(dog_t));
 	if (d == NULL)
 		return (d);
-	
+
 	/* allocate memory for name */
 	d->name = malloc(strlen(name) + 1);
 	if (d->name == NULL)

@@ -12,7 +12,5 @@ int main(void)
 
     my_dog = new_dog("s", 3.5, "Bob");
     printf("My name is %s, and I am %.1f :) - Woof!\n", my_dog->name, my_dog->age);
-    my_dog = new_dog("jack", 10.5, "pite");
-    printf("My name is %s, and I am %.1f :) - Woof! owened by %s\n", my_dog->name, my_dog->age,my_dog->owner);
     return (0);
 }
