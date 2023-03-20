@@ -17,7 +17,7 @@ dog_t *new_dog(char *name, float age, char *owner)
 	char *d_name, *d_owner;
 
 	/* elemenate uneeded values */
-	if (name == NULL || owner == NULL || age <= 0)
+	if (name == NULL || *name == '\0' || owner == NULL || *owner == '\0'|| age <= 0)
 		return (NULL);
 	/* allocate memory for d */
 	d = malloc(sizeof(dog_t));
