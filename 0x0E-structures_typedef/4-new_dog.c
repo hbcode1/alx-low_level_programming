@@ -16,7 +16,7 @@ dog_t *new_dog(char *name, float age, char *owner)
 	dog_t *d;
 
 	/* eleminate unneeded values */
-	if (name == NULL || age <= 0 || owner == NULL)
+	if (name == NULL || age < 0 || owner == NULL)
 		return (NULL);
 
 	/* allocate memory for d */
@@ -25,27 +25,25 @@ dog_t *new_dog(char *name, float age, char *owner)
 		return (d);
 
 	/* allocate memory for name */
-	d->name = malloc(strlen(name) + 1);
-	if ((*d).name == NULL)
+	d->name = malloc((strlen(name) + 1) * sizeof(char));
+	if (d->name == NULL)
 	{
 		free(d);
 		return (NULL);
 	}
-	d->name = name;
 
 	/* allocate memory for owner */
-	d->owner = malloc(strlen(owner) + 1);
-	if ((*d).owner == NULL)
+	d->owner = malloc((strlen(owner) + 1) * sizeof(char));
+	if (d->owner == NULL)
 	{
 		free(d->name);
 		free(d);
 		return (NULL);
 	}
-	d->owner = owner;
 
 	/* create new dog */
-	d->name = d->name;
+	d->name = memcpy(d->name, name, strlen(name) + 1);
 	d->age = age;
-	d->owner = d->owner;
+	d->owner = memcpy(d->owner, owner, strlen(owner) + 1);
 	return (d);
 }
