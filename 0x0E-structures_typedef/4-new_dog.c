@@ -16,7 +16,7 @@ dog_t *new_dog(char *name, float age, char *owner)
 	dog_t *d;
 
 	/* eleminate unneeded values */
-	if (name == NULL || age < 0 || owner == NULL)
+	if (name == NULL || age <= 0 || owner == NULL)
 		return (NULL);
 
 	/* allocate memory for d */
