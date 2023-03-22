@@ -20,7 +20,7 @@ char o;
 
 if (ac != 4 || av[2][1] != '\0')
 {
-printf("Error 0\n");
+printf("Error\n");
 exit(98);
 }
 
@@ -31,12 +31,12 @@ num2 = atoi(av[3]);
 
 if (!(o == '+' || o == '-' || o == '*' || o == '/' || o == '%'))
 {
-printf("Error 1\n");
+printf("Error\n");
 exit(99);
 }
 if ((*op == '/' || *op == '%') && num2 == 0)
 {
-printf("Error 2\n");
+printf("Error\n");
 exit(100);
 }
 printf("%d\n", get_op_func(op)(num1, num2));
