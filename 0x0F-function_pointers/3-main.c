@@ -18,7 +18,7 @@ int num1, num2;
 char *op;
 char o;
 
-if (ac != 4 || av[2][1] != '\0')
+if (ac != 4)
 {
 printf("Error\n");
 exit(98);
@@ -29,7 +29,7 @@ op = av[2];
 o = *av[2];
 num2 = atoi(av[3]);
 
-if (!(o == '+' || o == '-' || o == '*' || o == '/' || o == '%'))
+if (!(o == '+' || o == '-' || o == '*' || o == '/' || o == '%') || av[2][1] != '\0')
 {
 printf("Error\n");
 exit(99);
