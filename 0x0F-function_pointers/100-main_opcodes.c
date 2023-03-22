@@ -27,11 +27,12 @@ int main(int ac, char *av[])
 		printf("Error2\n");
 		exit(2);
 	}
-	while (i < atoi(av[1]))
+	while (i < atoi(av[1]) - 1)
 	{
 		printf("%02x ", *(opcode++));
 		i++;
 	}
+	printf("%02x", *(opcode++));
 	printf("\n");
 	return (0);
 }
