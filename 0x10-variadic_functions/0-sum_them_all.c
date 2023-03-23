@@ -1,5 +1,4 @@
 #include <stdarg.h>
-#include <stdio.h>
 #include "variadic_functions.h"
 
 /**
@@ -18,7 +17,7 @@ int sum_them_all(const u_i n, ...)
 	u_i i, sum = 0;
 
 	va_start(argp, n); /* initialise argument to the laset fixed argument */
-	if (n)
+	if (n != 0)
 	{
 		for (i = 0; i < n; i++)
 			/* add the cuurent argument to sum then point to the next arg */
