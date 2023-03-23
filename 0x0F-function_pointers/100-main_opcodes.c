@@ -24,7 +24,7 @@ int main(int ac, char *av[])
 	}
 	if (atoi(av[1]) < 0)
 	{
-		printf("Error2\n");
+		printf("Error\n");
 		exit(2);
 	}
 	while (i < atoi(av[1]) - 1)
