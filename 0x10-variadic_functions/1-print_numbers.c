@@ -10,7 +10,7 @@
  * @n: is the number of integers passed to the function.
  */
 
-void print_numbers(const char *separator, const unsigned int n, ...)
+void print_numbers(const char *separator, const u_i n, ...)
 {
 	u_i i;
 	va_list argp; /* pointer to argument list */
