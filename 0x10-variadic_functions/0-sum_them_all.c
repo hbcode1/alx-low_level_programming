@@ -15,8 +15,7 @@
 int sum_them_all(const u_i n, ...)
 {
 	va_list argp; /* pointer to argument list */
-	u_i i;
-	int sum = 0;
+	u_i i, sum = 0;
 
 	va_start(argp, n); /* initialise argument to the laset fixed argument */
 	if (n)
