@@ -16,14 +16,10 @@ int sum_them_all(const unsigned int n, ...)
 	unsigned int i, sum = 0;
 
 	va_start(argp, n); /* initialise argument to the laset fixed argument */
-	if (n != 0)
-	{
-		for (i = 0; i < n; i++)
-			/* add the cuurent argument to sum then point to the next arg */
-			sum += va_arg(argp, int);
-		return (sum);
-	}
+	for (i = 0; i < n; i++)
+		/* add the cuurent argument to sum then point to the next arg */
+		sum += va_arg(argp, int);
 	/* end argp list */
 	va_end(argp);
-	return (0);
+	return (sum);
 }
