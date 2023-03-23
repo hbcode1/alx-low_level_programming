@@ -14,6 +14,7 @@ void print_all(const char * const format, ...)
 {
 	va_list argp;
 	char *frm;
+	char *tmp_str;
 
 	/* allocate memory for temporary format */
 	frm = malloc(strlen(format) + 1);
@@ -36,7 +37,13 @@ void print_all(const char * const format, ...)
 				printf("%f", va_arg(argp, double));
 				break;
 			case 's':
-				printf("%s", va_arg(argp, char *));
+				tmp_str = va_arg(argp, char *);
+				if (tmp_str == NULL)
+				{
+					printf("(nil)");
+					break;
+				}
+				printf("%s", tmp_str);
 				break;
 			default:
 				frm++;
