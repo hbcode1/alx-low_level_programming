@@ -23,12 +23,10 @@ void print_numbers(const char *separator, const u_i n, ...)
 			/* print the curent arg then point to next arg */
 			printf("%d", va_arg(argp, int));
 			if (separator && i != n - 1)
-			{
 				printf("%s", separator);
-			}
 		}
-		printf("\n");
 	}
 	/* end arg list */
 	va_end(argp);
+	printf("\n");
 }
