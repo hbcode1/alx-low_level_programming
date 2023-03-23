@@ -20,6 +20,7 @@ void print_numbers(const char *separator, const unsigned int n, ...)
 	{
 		for (i = 0; i < n; i++)
 		{
+			/* print the curent arg then point to next arg */
 			printf("%d", va_arg(argp, int));
 			if (separator && i != n - 1)
 			{
@@ -28,4 +29,6 @@ void print_numbers(const char *separator, const unsigned int n, ...)
 		}
 		printf("\n");
 	}
+	/* end arg list */
+	va_end(argp);
 }
