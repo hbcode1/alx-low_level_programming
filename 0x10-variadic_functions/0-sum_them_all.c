@@ -1,5 +1,4 @@
 #include <stdarg.h>
-#include "variadic_functions.h"
 
 /**
  * sum_them_all - that returns the sum of all its parameters.
@@ -11,10 +10,10 @@
  *	- the sum of all parameters exclude n
  */
 
-int sum_them_all(const u_i n, ...)
+int sum_them_all(const unsigned int n, ...)
 {
 	va_list argp; /* pointer to argument list */
-	u_i i, sum = 0;
+	unsigned int i, sum = 0;
 
 	va_start(argp, n); /* initialise argument to the laset fixed argument */
 	if (n != 0)
