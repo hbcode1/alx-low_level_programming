@@ -62,6 +62,6 @@ void print_all(const char * const format, ...)
 			printf(", ");
 		frm++;
 	}
-	va_end(argp);
 	printf("\n");
+	va_end(argp);
 }
