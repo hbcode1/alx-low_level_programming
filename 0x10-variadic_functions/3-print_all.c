@@ -5,6 +5,20 @@
 #include <stdlib.h>
 
 /**
+ * pstr - handle s format case.
+ * @s: expected string.
+ */
+
+void pstr(char *s)
+{
+	if (s == NULL)
+	{
+		printf("(nil)");
+		return;
+	}
+	printf("%s", s);
+}
+/**
 * print_all - prints anything.
 *
 * @format: is a list of types of arguments passed to the function.
@@ -14,7 +28,7 @@ void print_all(const char * const format, ...)
 {
 	va_list argp;
 	char *frm;
-	char *tmp_str;
+	char *str;
 
 	/* allocate memory for temporary format */
 	frm = malloc(strlen(format) + 1);
@@ -37,13 +51,8 @@ void print_all(const char * const format, ...)
 				printf("%f", va_arg(argp, double));
 				break;
 			case 's':
-				tmp_str = va_arg(argp, char *);
-				if (tmp_str == NULL)
-				{
-					printf("(nil)");
-					break;
-				}
-				printf("%s", tmp_str);
+				str = va_arg(argp, char *);
+				pstr(str);
 				break;
 			default:
 				frm++;
