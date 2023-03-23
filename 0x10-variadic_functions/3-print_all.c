@@ -37,7 +37,7 @@ void print_all(const char * const format, ...)
 	/* initialise pointer to last fixed arg */
 	va_start(argp, format);
 
-	while (*frm != '\0')
+	while (*frm != '\0' && format)
 	{
 		switch (*frm)
 		{
