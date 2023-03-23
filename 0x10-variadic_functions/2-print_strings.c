@@ -28,7 +28,7 @@ void print_strings(const char *separator, const u_i n, ...)
 			if (separator && i != n - 1)
 				printf("%s", separator);
 		}
-		printf("\n");
 	}
 	va_end(argp); /* end arg list */
+	printf("\n");
 }
