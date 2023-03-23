@@ -18,10 +18,14 @@ int sum_them_all(const u_i n, ...)
 	u_i i, sum = 0;
 
 	va_start(argp, n); /* initialise argument to the laset fixed argument */
-	for (i = 0; i < n; i++)
-		/* add the cuurent argument to sum then point to the next arg */
-		sum += va_arg(argp, int);
+	if (n)
+	{
+		for (i = 0; i < n; i++)
+			/* add the cuurent argument to sum then point to the next arg */
+			sum += va_arg(argp, int);
+		return (sum);
+	}
 	/* end argp list */
 	va_end(argp);
-	return (sum);
+	return (0);
 }
