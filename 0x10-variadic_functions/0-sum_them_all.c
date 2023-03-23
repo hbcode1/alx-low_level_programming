@@ -12,7 +12,7 @@
  *	- the sum of all parameters exclude n
  */
 
-int sum_them_all(const u_i n, ...)
+int sum_them_all(const unsigned int n, ...)
 {
 	va_list argp; /* pointer to argument list */
 	u_i i;
