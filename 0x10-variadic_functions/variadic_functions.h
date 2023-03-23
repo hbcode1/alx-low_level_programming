@@ -2,7 +2,7 @@
 #define VARIADIC_FUNCTIONS_H
 int _putchar(char);
 /**
- * u_i : typedef of unsigned int
+ * u_i - Typedef for unsigned int
  */
 typedef unsigned int u_i;
 int sum_them_all(const unsigned int n, ...);
