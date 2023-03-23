@@ -28,6 +28,5 @@ int sum_them_all(const u_i n, ...)
 	}
 	/* end argp list */
 	va_end(argp);
-	printf("\n");
 	return (0);
 }
