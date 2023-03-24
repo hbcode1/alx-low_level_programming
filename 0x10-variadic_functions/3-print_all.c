@@ -3,6 +3,20 @@
 #include "variadic_functions.h"
 #include <string.h>
 #include <stdlib.h>
+/**
+ * print_s - handle s format case for print_all function.
+ * @s: expected string.
+ */
+
+void print_s(char *s)
+{
+	if (s == NULL)
+	{
+		printf("(nil)");
+		return;
+	}
+	printf("%s", s);
+}
 
 /**
 * print_all - prints anything.
@@ -32,7 +46,7 @@ void print_all(const char * const format, ...)
 				printf("%f", va_arg(argp, double));
 				break;
 			case 's':
-				printf("%s", va_arg(argp, char *));
+				print_s(va_arg(argp, char *));
 				break;
 			default:
 				i++;
