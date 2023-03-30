@@ -6,14 +6,14 @@
  * @head: pointer to the fisrt element in list_t list.
  */
 void free_list(list_t *head)
-{
-	if (head)
-	{
-		while (head->next)
-		{
-			free(head->str);
-			head = head->next;
-		}
-		free(head);
-	}
-}
+{    
+     list_t *curr_node;
+     curr_node = head;
+     while (curr_node)
+     {    
+          curr_node = head;
+          head = head->next;
+          free(curr_node->str);
+          free(curr_node);
+     }    
+}  
