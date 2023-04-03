@@ -12,22 +12,13 @@
 
 int pop_listint(listint_t **h)
 {
-	listint_t *temp_hanger, *target;
+	listint_t *temp_hanger = *h;
 	int t = 0;
 
-	if (h)
+	if (*h)
 	{
 		t = (*h)->n;
-		target = *h;
-		if (!target->next)
-		{
-			free(target);
-			return (t);
-		}
-		temp_hanger = (*h)->next;
-		target->next = NULL;
-		free(target);
-		*h = temp_hanger;
+		*h = temp_hanger->next;
 	}
 	return (t);
 }
