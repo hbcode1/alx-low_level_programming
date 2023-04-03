@@ -19,10 +19,16 @@ int pop_listint(listint_t **h)
 	{
 		t = (*h)->n;
 		target = *h;
-		temp_hanger = (*h)->next;
-		target->next = NULL;
-		free(target);
-		*h = temp_hanger;
+		if ((*h)->next)
+		{
+			temp_hanger = (*h)->next;
+			target->next = NULL;
+			free(target);
+			*h = temp_hanger;
+			return (t);
+		}
+		target = NULL;
+		*h = NULL;
 	}
 	return (t);
 }
