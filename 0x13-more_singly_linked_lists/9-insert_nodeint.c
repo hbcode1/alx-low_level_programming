@@ -37,6 +37,7 @@ listint_t *insert_nodeint_at_index(listint_t **h, u_i p, int n)
 		{
 			newnode->next = *h;
 			*h = newnode;
+			return (newnode);
 		}
 		else if (p > listint_len(*h))
 			return (NULL);
