@@ -17,6 +17,8 @@ listint_t *get_nodeint_at_index(listint_t *h, u_i i)
 
 	if (h)
 	{
+		if (i > listint_len(h))
+			return (NULL);
 		while (h->next)
 		{
 			while (j < i)
@@ -26,8 +28,30 @@ listint_t *get_nodeint_at_index(listint_t *h, u_i i)
 			}
 			if (h)
 				return (h);
-			return (NULL);
 		}
 	}
 	return (h);
+}
+/**
+ * listint_len - returns the number of elements in a linked listint_t list.
+ *
+ * @h: The first node in listint_h.
+ *
+ * Return: number of elements in listint_t
+ */
+
+size_t listint_len(const listint_t *h)
+{
+	int count = 0;
+
+	if (h)
+	{
+		while (h->next)
+		{
+			count++;
+			h = h->next;
+		}
+		count++;
+	}
+	return (count);
 }
