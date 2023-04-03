@@ -10,63 +10,7 @@
  */
 int main(void)
 {
-	listint_t *head;
-
-	head = NULL;
-	add_nodeint_end(&head, 0);
-	add_nodeint_end(&head, 1);
-	add_nodeint_end(&head, 2);
-	add_nodeint_end(&head, 3);
-	add_nodeint_end(&head, 4);
-	add_nodeint_end(&head, 98);
-	add_nodeint_end(&head, 402);
-	add_nodeint_end(&head, 1024);
-	print_listint(head);
-	printf("-----------------\n");
-	delete_nodeint_at_index(&head, 5);
-	print_listint(head);
-	printf("-----------------\n");
-	delete_nodeint_at_index(&head, 0);
-	print_listint(head);
-	printf("-----------------\n");
-	delete_nodeint_at_index(&head, 0);
-	print_listint(head);
-	printf("-----------------\n");
-	delete_nodeint_at_index(&head, 0);
-	print_listint(head);
-	printf("-----------------\n");
-	delete_nodeint_at_index(&head, 0);
-	print_listint(head);
-	printf("-----------------\n");
-	delete_nodeint_at_index(&head, 0);
-	print_listint(head);
-	printf("-----------------\n");
-	delete_nodeint_at_index(&head, 0);
-	print_listint(head);
-	printf("-----------------\n");
-	delete_nodeint_at_index(&head, 0);
-	printf("-----------------\n");
-	delete_nodeint_at_index(&head, 0);
-	printf("-----------------\n");
-	delete_nodeint_at_index(&head, 0);
-	printf("-----------------\n");
-	delete_nodeint_at_index(&head, 0);
-	printf("-----------------\n");
-	delete_nodeint_at_index(&head, 0);
-	printf("-----------------\n");
-	delete_nodeint_at_index(&head, 0);
-	printf("-----------------\n");
-	delete_nodeint_at_index(&head, 0);
-	printf("-----------------\n");
-	delete_nodeint_at_index(&head, 0);
-	printf("-----------------\n");
-	delete_nodeint_at_index(&head, 0);
-	printf("-----------------\n");
-	delete_nodeint_at_index(&head, 0);
-	print_listint(head);
-	return (0);
-
-	/*
+	/* 10
 	   listint_t *head;
 
 	   head = NULL;
@@ -80,11 +24,70 @@ int main(void)
 	   add_nodeint_end(&head, 1024);
 	   print_listint(head);
 	   printf("-----------------\n");
-	   insert_nodeint_at_index(&head, 7, 4096);
+	   delete_nodeint_at_index(&head, 5);
 	   print_listint(head);
-	   free_listint2(&head);
+	   printf("-----------------\n");
+	   delete_nodeint_at_index(&head, 0);
+	   print_listint(head);
+	   printf("-----------------\n");
+	   delete_nodeint_at_index(&head, 0);
+	   print_listint(head);
+	   printf("-----------------\n");
+	   delete_nodeint_at_index(&head, 0);
+	   print_listint(head);
+	   printf("-----------------\n");
+	   delete_nodeint_at_index(&head, 0);
+	   print_listint(head);
+	   printf("-----------------\n");
+	   delete_nodeint_at_index(&head, 0);
+	   print_listint(head);
+	   printf("-----------------\n");
+	   delete_nodeint_at_index(&head, 0);
+	   print_listint(head);
+	   printf("-----------------\n");
+	   delete_nodeint_at_index(&head, 0);
+	   printf("-----------------\n");
+	   delete_nodeint_at_index(&head, 0);
+	   printf("-----------------\n");
+	   delete_nodeint_at_index(&head, 0);
+	   printf("-----------------\n");
+	   delete_nodeint_at_index(&head, 0);
+	   printf("-----------------\n");
+	   delete_nodeint_at_index(&head, 0);
+	   printf("-----------------\n");
+	   delete_nodeint_at_index(&head, 0);
+	   printf("-----------------\n");
+	   delete_nodeint_at_index(&head, 0);
+	   printf("-----------------\n");
+	   delete_nodeint_at_index(&head, 0);
+	   printf("-----------------\n");
+	   delete_nodeint_at_index(&head, 0);
+	   printf("-----------------\n");
+	   delete_nodeint_at_index(&head, 0);
+	   print_listint(head);
 	   return (0);
 	 */
+	/* 9 */
+	/*
+	listint_t *head;
+
+	head = NULL;
+	add_nodeint_end(&head, 0);
+	add_nodeint_end(&head, 1);
+	add_nodeint_end(&head, 2);
+	add_nodeint_end(&head, 3);
+	add_nodeint_end(&head, 4);
+	add_nodeint_end(&head, 98);
+	add_nodeint_end(&head, 402);
+	add_nodeint_end(&head, 1024);
+	print_listint(head);
+	printf("-----------------\n");
+	insert_nodeint_at_index(&head, 9, 4096);
+	print_listint(head);
+	free_listint2(&head);
+	return (0);
+	*/
+	/* 8 */
 	/*
 	   listint_t *head;
 	   int sum;
@@ -103,7 +106,8 @@ int main(void)
 	   free_listint2(&head);
 	   return (0);
 	 */
-	/*
+	/* 7 */
+/*	
 	   listint_t *head;
 	   listint_t *node;
 
@@ -122,49 +126,73 @@ int main(void)
 	   print_listint(head);
 	   free_listint2(&head);
 	   return (0);
-	 */
-	/*
-	   listint_t *head;
-	   int n;
+*/	 
+	/* 6 */
+			
+			listint_t *head;
+			int n;
 
-	   head = NULL;
-	   add_nodeint_end(&head, 0);
-	   add_nodeint_end(&head, 1);
-	   add_nodeint_end(&head, 2);
-	   add_nodeint_end(&head, 3);
-	   add_nodeint_end(&head, 4);
-	   add_nodeint_end(&head, 98);
-	   add_nodeint_end(&head, 402);
-	   add_nodeint_end(&head, 1024);
-	   print_listint(head);
-	   n = pop_listint(&head);
-	   printf("- %d\n", n);
-	   print_listint(head);
-	   n = pop_listint(&head);
-	   printf("- %d\n", n);
-	   print_listint(head);
-	   free_listint2(&head);
-	   printf("%p\n", (void *)head);
-	   return (0);
-	 */
-	/*
-	   listint_t *head;
+			head = NULL;
+			add_nodeint_end(&head, 0);
+			add_nodeint_end(&head, 1);
+			add_nodeint_end(&head, 2);
+			add_nodeint_end(&head, 3);
+			add_nodeint_end(&head, 4);
+			add_nodeint_end(&head, 98);
+			add_nodeint_end(&head, 402);
+			add_nodeint_end(&head, 1024);
+			print_listint(head);
+			n = pop_listint(&head);
+			printf("- %d\n", n);
+			print_listint(head);
+			n = pop_listint(&head);
+			printf("- %d\n", n);
+			print_listint(head);
+			n = pop_listint(&head);
+			printf("- %d\n", n);
+			print_listint(head);
+			n = pop_listint(&head);
+			printf("- %d\n", n);
+			print_listint(head);
+			n = pop_listint(&head);
+			printf("- %d\n", n);
+			print_listint(head);
+			n = pop_listint(&head);
+			printf("- %d\n", n);
+			print_listint(head);
+			n = pop_listint(&head);
+			printf("- %d\n", n);
+			print_listint(head);
+			n = pop_listint(&head);
+			printf("- %d\n", n);
+			print_listint(head);
+			n = pop_listint(&head);
+			printf("- %d\n", n);
+			print_listint(head);
+			n = pop_listint(&head);
+			printf("- %d\n", n);
+			print_listint(head);
+			free_listint2(&head);
+			printf("%p\n", (void *)head);
+			return (0);
+	  /* 5	
+			 listint_t *head;
 
-	   head = NULL;
-	   add_nodeint_end(&head, 0);
-	   add_nodeint_end(&head, 1);
-	   add_nodeint_end(&head, 2);
-	   add_nodeint_end(&head, 3);
-	   add_nodeint_end(&head, 4);
-	   add_nodeint_end(&head, 98);
-	   add_nodeint_end(&head, 402);
-	   add_nodeint_end(&head, 1024);
-	   print_listint(head);
-	   free_listint2(&head);
-	   printf("%p\n", (void *)head);
-	   return (0);
-	 */
-	/*
+			 head = NULL;
+			 add_nodeint_end(&head, 0);
+			 add_nodeint_end(&head, 1);
+			 add_nodeint_end(&head, 2);
+			 add_nodeint_end(&head, 3);
+			 add_nodeint_end(&head, 4);
+			 add_nodeint_end(&head, 98);
+			 add_nodeint_end(&head, 402);
+			 add_nodeint_end(&head, 1024);
+			 print_listint(head);
+			 free_listint2(&head);
+			 printf("%p\n", (void *)head);
+			 return (0);
+		    */
+	/* 4
 	   listint_t *head;
 
 	   head = NULL;
