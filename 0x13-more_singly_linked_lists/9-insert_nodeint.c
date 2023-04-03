@@ -20,33 +20,30 @@ listint_t *insert_nodeint_at_index(listint_t **h, u_i p, int n)
 
 	/* allocate memory for new node */
 	newnode = malloc(sizeof(listint_t));
-	if (!newnode)
+	if (!newnode || !h)
 		return (newnode);
 	/* store head node */
 	right = *h;
-	if (right)
+	while (i < p && right)
 	{
-		while (i < p && right)
-		{
-			left = right;
-			right = right->next;
-			i++;
-		}
-		newnode->n = n;
-		if (p == 0)
-		{
-			newnode->next = *h;
-			*h = newnode;
-			return (newnode);
-		}
-		else if (p > listint_len(*h))
-		{
-			free(newnode);
-			return (NULL);
-		}
-		newnode->next = right;
-		left->next = newnode;
+		left = right;
+		right = right->next;
+		i++;
 	}
+	newnode->n = n;
+	if (p == 0)
+	{
+		newnode->next = *h;
+		*h = newnode;
+		return (newnode);
+	}
+	else if (p > listint_len(*h))
+	{
+		free(newnode);
+		return (NULL);
+	}
+	newnode->next = right;
+	left->next = newnode;
 	return (newnode);
 }
 
