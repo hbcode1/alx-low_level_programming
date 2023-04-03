@@ -24,6 +24,8 @@ listint_t *get_nodeint_at_index(listint_t *h, u_i i)
 				h = h->next;
 				j++;
 			}
+			if (h)
+				return (h);
 		}
 		if (!h)
 			return (NULL);
