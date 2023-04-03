@@ -12,7 +12,7 @@
 
 int pop_listint(listint_t **h)
 {
-	listint_t *temp_hanger;
+	listint_t *temp_hanger, *target;
 	int t = 0;
 
 	if (h)
