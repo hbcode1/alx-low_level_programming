@@ -40,7 +40,10 @@ listint_t *insert_nodeint_at_index(listint_t **h, u_i p, int n)
 			return (newnode);
 		}
 		else if (p > listint_len(*h))
+		{
+			free(newnode);
 			return (NULL);
+		}
 		newnode->next = right;
 		left->next = newnode;
 	}
