@@ -14,16 +14,16 @@ size_t free_listint_safe(listint_t **h)
 	listint_t *target, *tmp1 = *h, *tmp2 = *h, *link;
 	int s = 0;
 
-     if (h)
-     {
+	if (h)
+	{
 		/* detect loop */
-          while (tmp2 && tmp2->next)
-          {
-               tmp1 = tmp1->next;
-               tmp2 = tmp2->next->next;
-               if ((tmp1 == tmp2) && tmp1 != NULL)
+		while (tmp2 && tmp2->next)
+		{
+			tmp1 = tmp1->next;
+			tmp2 = tmp2->next->next;
+			if ((tmp1 == tmp2) && tmp1 != NULL)
 				break;
-          }
+		}
 		/* break loop */
 		if (tmp1 == tmp2)
 		{
