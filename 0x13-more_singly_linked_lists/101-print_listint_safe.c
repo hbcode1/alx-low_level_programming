@@ -34,10 +34,10 @@ size_t print_listint_safe(const listint_t *h)
 					return (count);
 				}
 				match = match->next;
-				if (match == NULL)
-					exit(98);
 				i++;
 			}
+			if (h == NULL)
+				exit(98);
 		}
 	}
 	return (count);
