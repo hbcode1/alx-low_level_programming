@@ -34,7 +34,6 @@ size_t print_listint_safe(const listint_t *h)
 				count++;
 				h = h->next;
 			}
-	printf("%d\n", count);
 			return (count);
 		}
 		/* if loop */
@@ -55,7 +54,6 @@ size_t print_listint_safe(const listint_t *h)
 			target = target->next;
 		}
 		printf("[%p] %d\n", (void *)target, target->n);
-		count++;
 		target = target->next;
 		while (target != match)
 		{
@@ -67,7 +65,6 @@ size_t print_listint_safe(const listint_t *h)
 		if (h == NULL)
 			exit(98);
 	}
-	printf("%d\n", count);
 	return (count);
 }
 
