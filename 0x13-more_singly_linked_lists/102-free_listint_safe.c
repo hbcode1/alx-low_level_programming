@@ -2,6 +2,7 @@
 
 /**
  * free_listint_safe - frees a listint_t list.
+ * 			using Floyd's cycle-finding algorithm.
  *
  * @h: Head node.
  *
