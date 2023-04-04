@@ -20,10 +20,10 @@ size_t print_listint_safe(const listint_t *h)
 		tmp = h;
 		while (tmp->next)
 		{
-			/* reset match and macth index */
-			match = h, i = 0;
 			if (h == NULL)
 				exit(98);
+			/* reset match and macth index */
+			match = h, i = 0;
 			printf("[%p] %d\n", (void *)tmp, tmp->n);
 			tmp = tmp->next;
 			count++;
