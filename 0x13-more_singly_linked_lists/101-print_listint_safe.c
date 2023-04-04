@@ -37,8 +37,8 @@ size_t print_listint_safe(const listint_t *h)
 				i++;
 			}
 		}
-		if (!h)
-			exit(98);
 	}
+	else
+		exit(98);
 	return (count);
 }
