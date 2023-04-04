@@ -22,7 +22,7 @@ size_t print_listint_safe(const listint_t *h)
 		{
 			/* reset match and macth index */
 			match = h, i = 0;
-			if (match == NULL)
+			if (h == NULL)
 				exit(98);
 			printf("[%p] %d\n", (void *)tmp, tmp->n);
 			tmp = tmp->next;
