@@ -33,4 +33,6 @@ listint_t *insert_nodeint_at_index(listint_t **head, u_i index, int number);
 int delete_nodeint_at_index(listint_t **head, u_i index);
 listint_t *reverse_listint(listint_t **head);
 size_t print_listint_safe(const listint_t *head);
+size_t free_listint_safe(listint_t **head);
+listint_t *find_listint_loop(listint_t *head);
 #endif /* end def lists.h*/
