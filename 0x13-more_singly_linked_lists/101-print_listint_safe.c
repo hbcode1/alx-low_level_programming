@@ -18,6 +18,8 @@ size_t print_listint_safe(const listint_t *h)
 	{
 		/* store head */
 		tmp = h;
+		if (tmp == NULL)
+			exit(98);
 		while (tmp->next)
 		{
 			/* reset match and macth index */
@@ -38,7 +40,5 @@ size_t print_listint_safe(const listint_t *h)
 			}
 		}
 	}
-	else
-		exit(98);
 	return (count);
 }
