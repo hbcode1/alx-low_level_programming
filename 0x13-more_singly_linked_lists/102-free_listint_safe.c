@@ -30,14 +30,22 @@ size_t free_listint_safe(listint_t **h)
 		{
 			link = tmp1;
 			tmp1 = *h;
-
-			while (tmp1 != tmp2)
+			/* case looped list of 2 elements */
+			if (tmp1 == link)
 			{
-				link = tmp2;
-				tmp1 = tmp1->next;
 				tmp2 = tmp2->next;
+				tmp2->next = NULL;
 			}
-			link->next = NULL;
+			else
+			{
+				while (tmp1 != tmp2)
+				{
+					link = tmp2;
+					tmp1 = tmp1->next;
+					tmp2 = tmp2->next;
+				}
+				link->next = NULL;
+			}
 		}
 		/* free loop-free list */
 		while ((target = *h))
