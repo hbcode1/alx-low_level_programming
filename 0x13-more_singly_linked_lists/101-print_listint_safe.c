@@ -18,11 +18,9 @@ size_t print_listint_safe(const listint_t *h)
 	{
 		/* store head */
 		tmp = h;
-		if (tmp == NULL)
-			exit(98);
 		while (tmp->next)
 		{
-			/* reset match and macth index */
+			/* reset match and match index */
 			match = h, i = 0;
 			printf("[%p] %d\n", (void *)tmp, tmp->n);
 			tmp = tmp->next;
@@ -39,6 +37,8 @@ size_t print_listint_safe(const listint_t *h)
 				i++;
 			}
 		}
+		printf("[%p] %d\n", (void *)tmp, tmp->n);
+		count++;
 	}
 	return (count);
 }
