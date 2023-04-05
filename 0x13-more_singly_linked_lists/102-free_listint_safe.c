@@ -23,10 +23,7 @@ size_t free_listint_safe(listint_t **h)
 			tmp1 = tmp1->next;
 			tmp2 = tmp2->next->next;
 			if ((tmp1 == tmp2) && tmp1 != NULL)
-			{
-				s++;
 				break;
-			}
 		}
 		/* break loop */
 		if (tmp1 == tmp2)
