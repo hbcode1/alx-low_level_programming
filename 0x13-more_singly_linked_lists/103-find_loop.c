@@ -41,5 +41,5 @@ listint_t *find_listint_loop(listint_t *h)
 		}
 
 	}
-	return (NULL);
+	return (h);
 }
