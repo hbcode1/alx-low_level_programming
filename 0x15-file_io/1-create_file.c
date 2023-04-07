@@ -17,14 +17,17 @@
 
 int create_file(const char *name, char *txt)
 {
-	int in = open(name, O_WRONLY | O_CREAT | O_TRUNC, 600);
+	int in = open(name, O_CREAT | O_WRONLY | O_TRUNC, S_IRUSR | S_IWUSR);
 	int p;
 
 	if (in < 0 || !name)
 		return (-1);
-	p = write(in, txt ? txt : "", txt ? strlen(txt) : 0);
-	if (p < 0)
-		return (p);
+	if (txt)
+	{
+		p = write(in, txt, strlen(txt));
+		if (p < 0)
+			return (p);
+	}
 	close(in);
 	return (1);
 }
