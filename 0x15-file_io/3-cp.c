@@ -23,42 +23,56 @@ int main(int ac, char *av[])
 
 	ffrom = open(av[1], O_RDONLY);
 	if (ffrom < 0 || !av[1])
-	{
-		dprintf(2, "Error: Can't read from file %s\n", av[1]);
-		exit(98);
-	}
+		print_error(98, av[1], 0);
 	fto = open(av[2], O_CREAT | O_TRUNC | O_WRONLY, 0664);
 	if (fto < 0 || !av[2])
-	{
-		dprintf(2, "Error: Can't write to %s\n", av[2]);
-		exit(99);
-	}
+		print_error(99, av[2], 0);
 	while ((len = read(ffrom, buff, MAX_BUFF_SIZE)) > 0)
 	{
 
 		s = write(fto, buff, len);
 		if (s < 0)
-		{
-			dprintf(2, "Error: Can't write to %s\n", av[2]);
-			exit(99);
-		}
+			print_error(99, av[2], 0);
 	}
 	if (len < 0)
-	{	
-		dprintf(2, "Error: Can't read from file %s\n", av[1]);
-		exit(98);
-	}
+		print_error(98, av[1], 0);
 	s = close(ffrom);
 	if (s < 0)
-	{
-		dprintf(2, "Error: Can't close %d\n", ffrom);
-		exit(100);
-	}
+		print_error(100, NULL, ffrom);
 	s = close(fto);
 	if (s < 0)
+		print_error(1002, NULL, fto);
+	return (0);
+}
+
+/**
+ * print_error -  prints message error on the POSIX standard error
+ *			and hanlde exit status.
+ * @e: type of error.(exit status).
+ * @name: name of the file concernong error.
+ * @d: descriptor.
+ * Return:
+ *	- 0 Success.
+ */
+
+int print_error(int e, char *name, int d)
+{
+	if (e == 98)
 	{
-		dprintf(2, "Error: Can't close %d\n", fto);
-		exit(100);
+		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", name);
+		exit(e);
 	}
+	else if (e == 99)
+	{
+		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", name);
+		exit(e);
+	}
+	else if (e == 100)
+	{
+		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", d);
+		exit(e);
+	}
+	else
+		dprintf(STDERR_FILENO, "Unknown error\n");
 	return (0);
 }
