@@ -20,7 +20,7 @@ int append_text_to_file(const char *name, char *txt)
 	int in = open(name, O_WRONLY, 600);
 	int p;
 
-	if (in == -1 || !in || !name)
+	if (in < 0 || !name)
 		return (-1);
 	if (txt)
 	{

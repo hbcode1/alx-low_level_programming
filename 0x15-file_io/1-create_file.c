@@ -20,7 +20,7 @@ int create_file(const char *name, char *txt)
 	int in = open(name, O_WRONLY | O_CREAT | O_TRUNC, 600);
 	int p;
 
-	if (!in || !name)
+	if (in < 0 || !name)
 		return (-1);
 	p = write(in, txt ? txt : "", txt ? strlen(txt) : 0);
 	if (p < 0)

@@ -22,7 +22,7 @@ ssize_t read_textfile(const char *name, size_t l)
 	txt = malloc(sizeof(char) * l);
 	if (txt == NULL)
 		return (STDIN_FILENO);
-	if (!in || !name)
+	if (in < 0 || !name)
 		return (STDIN_FILENO);
 	count = write(1, txt, read(in, txt, l));
 	if (count < 0)
