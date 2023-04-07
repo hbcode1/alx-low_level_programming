@@ -27,7 +27,7 @@ int main(int ac, char *av[])
 		dprintf(2, "Error: Can't read from file %s\n", av[1]);
 		exit(98);
 	}
-	fto = open(av[2], O_WRONLY | O_TRUNC | O_CREAT, 664);
+	fto = open(av[2], O_CREAT | O_TRUNC | O_WRONLY, 0664);
 	if (fto < 0 || !av[2])
 	{
 		dprintf(2, "Error: Can't write to %s\n", av[2]);
@@ -48,7 +48,6 @@ int main(int ac, char *av[])
 		dprintf(2, "Error: Can't read from file %s\n", av[1]);
 		exit(98);
 	}
-	printf("%s\n", buff);
 	s = close(ffrom);
 	if (s < 0)
 	{
