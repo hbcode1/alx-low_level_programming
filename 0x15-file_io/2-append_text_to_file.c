@@ -8,7 +8,7 @@
  *
  * Return:
  *   - 1 Success.
- *   - (-1) Failure: 
+ *   - (-1) Failure:
  *        - If file cant be created.
  *        - If write fails.
  *        - If filename is NULL.
@@ -19,6 +19,7 @@ int append_text_to_file(const char *name, char *txt)
 {
 	int in = open(name, O_WRONLY, 600);
 	int p;
+
 	if (in == -1 || !in || !name)
 		return (-1);
 	if (txt)
