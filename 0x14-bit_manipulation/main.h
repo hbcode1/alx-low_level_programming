@@ -3,6 +3,7 @@
 
 /* C Libs */
 #include <stdio.h>
+#include <limits.h>
 
 /* Macros */
 
