@@ -10,27 +10,23 @@
 void print_binary(ul_i n)
 {
 	/* Define a display mask = 2147483648*/
-	u_i d = 1 << 31, l = 1, len = 0;
-	ul_i num = n;
+	u_i d = 1 << 31, l = 1, res, zero = 0;
 
-	if (n)
+	while (l <= 32)
 	{
-		/* Get length of the number */
-		while (!(num & d) && len <= 32)
-			len++, num <<= 1;
-		/* shift display mask right */
-		while (len > 0)
-			d >>= 1, len--, l++;
 		/* bitwise OR number and display mask */
-		while (l <= 32)
-		{
-			if (n & d)
-				_putchar(49); /* if 1 print 1 */
-			else
-				_putchar(48); /* if 0 print 0 */
-			n <<= 1, l++; /* sheft left */
-		}
-		return;
+		if (n & d)
+			res = '1'; /* to print 1 */
+		else
+			res = '0'; /* to pritn 0 */
+		/* Handle leading 0s */
+		if (res == '1')
+			zero = 1;
+		if (zero)
+			_putchar(res);
+		n <<= 1, l++; /* shift left */
 	}
-	_putchar('0');
+	/* case 0 and LONG_MIN*/
+	if (!zero)
+		_putchar('0');
 }
