@@ -29,8 +29,6 @@ void print_binary(ul_i n)
 			else
 				_putchar(48); /* if 0 print 0 */
 			n <<= 1, l++; /* sheft left */
-			if (l % 8 == 0)
-				_putchar(' ');
 		}
 	}
 	_putchar('0');
