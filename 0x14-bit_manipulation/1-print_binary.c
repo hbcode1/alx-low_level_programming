@@ -30,6 +30,7 @@ void print_binary(ul_i n)
 				_putchar(48); /* if 0 print 0 */
 			n <<= 1, l++; /* sheft left */
 		}
+		return;
 	}
 	_putchar('0');
 }
