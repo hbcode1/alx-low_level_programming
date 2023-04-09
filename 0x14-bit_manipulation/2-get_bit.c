@@ -21,7 +21,7 @@ int get_bit(ul_i n, u_i i)
 		len++, num >>= 1;
 	len -= 1;
 	if (i > len)
-		return (-1);
+		return (0);
 	/* shift left mask */
 	if (n != 0)
 		d <<= len;
