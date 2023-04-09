@@ -9,24 +9,28 @@
 
 void print_binary(ul_i n)
 {
-	/* Define a display mask = 2147483648*/
-	u_i d = 1 << 31, l = 1, res, zero = 0;
+	/* Define an unsigned long display mask */
+	ul_i d = 1, len = 0, num = n;
 
-	while (l <= 32)
+	/* get number length */
+	while (num > 0)
+		len++, num >>= 1;
+	/* case 0 */
+	if (n == 0)
+	{
+		_putchar('0');
+		return;
+	}
+	/* shift left mask */
+	d <<= (len - 1);
+	/* loop bits */
+	while (d > 0)
 	{
 		/* bitwise OR number and display mask */
 		if (n & d)
-			res = '1'; /* to print 1 */
+			_putchar('1');
 		else
-			res = '0'; /* to pritn 0 */
-		/* Handle leading 0s */
-		if (res == '1')
-			zero = 1;
-		if (zero)
-			_putchar(res);
-		n <<= 1, l++; /* shift left */
+			_putchar('0');
+		d >>= 1; /* shift right */
 	}
-	/* case 0 and LONG_MIN*/
-	if (!zero)
-		_putchar('0');
 }
