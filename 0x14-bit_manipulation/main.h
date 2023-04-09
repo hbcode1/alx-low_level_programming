@@ -23,5 +23,6 @@ u_i binary_to_uint(const char *binary);
 void print_binary(ul_i number);
 int get_bit(unsigned long int number, unsigned int index);
 int set_bit(unsigned long int *number, unsigned int index);
-int clear_bit(unsigned long int *n, unsigned int index);
+int clear_bit(unsigned long int *number, unsigned int index);
+u_i flip_bits(unsigned long int number1, unsigned long int number2);
 #endif /* end def main.h */
