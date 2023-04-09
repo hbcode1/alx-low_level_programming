@@ -13,7 +13,7 @@
 typedef unsigned int u_i;
 
 /**
- * u_i - typedef for long unsigned int.
+ * ul_i - typedef for unsigned long int.
  */
 typedef unsigned long int ul_i;
 
