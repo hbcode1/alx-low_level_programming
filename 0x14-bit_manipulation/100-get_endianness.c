@@ -20,6 +20,6 @@ int get_endianness(void)
 
 	/* while (s) */
 	/*	printf("%.2x ", ((char *)&integer)[s]), s--;*/
-	return (*c);
+	return (*ptr);
 }
 
