@@ -153,8 +153,7 @@ int main(int ac, char *av[])
 			pstderr(3, av[1]);
 		pstderr(2, av[1]);
 	}
-	/* check if elf file */
-	checkfile(head.e_ident, file, av[1]);
+	checkfile(head.e_ident, file, av[1]);/* check if elf file */
 	printf("ELF Header:\n");
 	printf("  Magic:   ");/* print magic number */
 	while (i < EI_NIDENT)
