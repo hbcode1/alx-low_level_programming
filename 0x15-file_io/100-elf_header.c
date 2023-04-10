@@ -79,7 +79,7 @@ int checkfile(unsigned char *m, int f, char *data)
 	if (!(m[0] == 0x7f && m[1] == 'E' && m[2] == 'L' && m[3] == 'F'))
 	{
 		c = close(f);
-		if (c < 1)
+		if (c < 0)
 			pstderr(3, data);
 		pstderr(4, data);
 	}
@@ -149,7 +149,7 @@ int main(int ac, char *av[])
 	if (read(file, &head, sizeof(head)) < 0)
 	{
 		c = close(file);
-		if (c < 1)
+		if (c < 0)
 			pstderr(3, av[1]);
 		pstderr(2, av[1]);
 	}
@@ -175,7 +175,7 @@ int main(int ac, char *av[])
 
 	/* close file */
 	c = close(file);
-	if (c < 1)
+	if (c < 0)
 		pstderr(3, av[1]);
 	return (0);
 }
