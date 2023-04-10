@@ -14,33 +14,33 @@
 
 int main(int ac, char *av[])
 {
-	FILE *file;
+	int file;
 	ElfW(Ehdr) head;
 	int i = 0;
 
 	/* Usage */
 	if (ac != 2)
 	{
-		dprintf(1, "Usage: %s elf_filename", av[0]);
+		dprintf(1, "Usage: %s elf_filename\n", av[0]);
 		exit(98);
 	}
 	/* open file */
-	file = fopen(av[1], "r");
-	if (!file)
+	file = open(av[1], O_RDONLY);
+	if (file < 0)
 	{
-		dprintf(1, "Can't open file: %s", av[1]);
+		dprintf(1, "Can't open file: %s\n", av[1]);
           exit(98);
 	}
 	/* read file */
-	if (fread(&head, sizeof(head), 1, file) != 1)
+	if (read(file, &head, sizeof(head)) < 0)
 	{
-		dprintf(1, "Can't read file: %s", av[1]);
+		dprintf(1, "Can't read file: %s\n", av[1]);
           exit(98);
 	}
 	/* check if elf file */
 	if (!(head.e_ident[0] == 0x7f && head.e_ident[1] == 'E' && head.e_ident[2] == 'L' && head.e_ident[3] == 'F'))
 	{
-		dprintf(1, "Unvalid file format: %s", av[1]);
+		dprintf(1, "Unvalid file format: %s\n", av[1]);
           exit(98);
 	}
 	/* Print header information */
@@ -55,7 +55,7 @@ int main(int ac, char *av[])
 	printf("OS/ABI: %d\n", head.e_ident[EI_OSABI]);
 	printf("ABI Version: %d\n", head.e_ident[EI_ABIVERSION]);
 	printf("Type: %d\n", head.e_type);
-	printf("Entry point address: %#lx\n", head.e_entry);
+	printf("Entry point address: %#lx\n", head.e_entry & 0xffffff);
 
 	/* close file */
 	return (0);
