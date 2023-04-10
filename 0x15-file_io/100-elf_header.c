@@ -14,10 +14,9 @@
 
 int main(int ac, char *av[])
 {
-	int file;
-	ElfW(Ehdr) head;
-	int i = 0;
+	int file, i = 0;
 
+	ElfW(Ehdr) head;
 	/* Usage */
 	if (ac != 2)
 	{
@@ -29,19 +28,19 @@ int main(int ac, char *av[])
 	if (file < 0)
 	{
 		dprintf(1, "Can't open file: %s\n", av[1]);
-          exit(98);
+		exit(98);
 	}
 	/* read file */
 	if (read(file, &head, sizeof(head)) < 0)
 	{
 		dprintf(1, "Can't read file: %s\n", av[1]);
-          exit(98);
+		exit(98);
 	}
 	/* check if elf file */
 	if (!(head.e_ident[0] == 0x7f && head.e_ident[1] == 'E' && head.e_ident[2] == 'L' && head.e_ident[3] == 'F'))
 	{
 		dprintf(1, "Unvalid file format: %s\n", av[1]);
-          exit(98);
+		exit(98);
 	}
 	/* Print header information */
 	printf("ELF Header:\n");
@@ -49,7 +48,7 @@ int main(int ac, char *av[])
 	printf("Magic: ");
 	while (i < EI_NIDENT)
 		printf("%02x ", head.e_ident[i]), i++;
-	printf("\nClass: %s\n", (head.e_ident[EI_CLASS] == ELFCLASS32) ? "32": "64");
+	printf("\nClass: %s\n", (head.e_ident[EI_CLASS] == ELFCLASS32) ? "32" : "64");
 	printf("Data: %s\n", head.e_ident[EI_DATA] == ELFDATA2LSB ? "little" : " big");
 	printf("Version: %d\n", head.e_ident[EI_VERSION]);
 	printf("OS/ABI: %d\n", head.e_ident[EI_OSABI]);
