@@ -1,6 +1,14 @@
 #ifndef MAIN_H
 #define MAIN_H
 
+/* machine bit for elf task */
+
+#if defined(__LP64__)
+#define ElfW(type) Elf64_ ## type
+#else
+#define ElfW(type) Elf32_ ## type
+#endif
+
 /* C libs */
 #include <stdio.h>
 #include <unistd.h>
@@ -8,7 +16,7 @@
 #include <fcntl.h>
 #include <stdlib.h>
 #include <string.h>
-
+#include <elf.h>
 /* Macros */
 
 #define MAX_BUFF_SIZE 1024
