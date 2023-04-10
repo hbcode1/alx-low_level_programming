@@ -1,5 +1,13 @@
 #include "main.h"
 
+/* machine bit for elf task */
+
+#if defined(__LP64__)
+#define ElfW(type) Elf64_ ## type
+#else
+#define ElfW(type) Elf32_ ## type
+#endif
+
 /**
  * main - Entry point
  * program that displays the information contained
@@ -35,7 +43,7 @@ int main(int ac, char *av[])
 	{
 		close(file);
 		if (file < 1)
-		{	
+		{
 			dprintf(1, "Can't close file: %s\n", av[1]);
 			exit(98);
 		}
@@ -47,7 +55,7 @@ int main(int ac, char *av[])
 	{
 		close(file);
 		if (file < 1)
-		{	
+		{
 			dprintf(1, "Can't close file: %s\n", av[1]);
 			exit(98);
 		}
@@ -60,7 +68,7 @@ int main(int ac, char *av[])
 	printf("Magic: ");
 	while (i < EI_NIDENT)
 		printf("%02x ", head.e_ident[i]), i++;
-	printf("\nClass: %s\n", (head.e_ident[EI_CLASS] == ELFCLASS32) ? "32": "64");
+	printf("\nClass: %s\n", (head.e_ident[EI_CLASS] == ELFCLASS32) ? "32" : "64");
 	printf("Data: %s\n", head.e_ident[EI_DATA] == ELFDATA2LSB ? "little" : " big");
 	printf("Version: %d\n", head.e_ident[EI_VERSION]);
 	printf("OS/ABI: %d\n", head.e_ident[EI_OSABI]);
@@ -71,7 +79,7 @@ int main(int ac, char *av[])
 	/* close file */
 	close(file);
 	if (file < 1)
-	{	
+	{
 		dprintf(1, "Can't close file: %s\n", av[1]);
 		exit(98);
 	}
