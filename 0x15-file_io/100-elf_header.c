@@ -9,26 +9,26 @@ int main(int ac, char *av[])
 	/* Usage */
 	if (ac != 2)
 	{
-		dprintf(1, "Usage: %s elf_filename", av[0]);
+		printf("Usage: %s elf_filename", av[0]);
 		exit(98);
 	}
 	/* open file */
 	file = fopen(av[1], "r");
 	if (!file)
 	{
-		dprintf(1, "Can't open file: %s", av[1]);
+		printf("Can't open file: %s", av[1]);
           exit(98);
 	}
 	/* read file */
 	if (fread(&head, sizeof(head), 1, file) != 1)
 	{
-		dprintf(1, "Can't read file: %s", av[1]);
+		printf("Can't read file: %s", av[1]);
           exit(98);
 	}
 	/* check if elf file */
 	if (!(head.e_ident[0] == 0x7f && head.e_ident[1] == 'E' && head.e_ident[2] == 'L' && head.e_ident[3] == 'F'))
 	{
-		dprintf(1, "Unvalid file format: %s", av[1]);
+		printf("Unvalid file format: %s", av[1]);
           exit(98);
 	}
 	/* Print header information */
