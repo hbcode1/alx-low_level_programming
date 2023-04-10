@@ -14,32 +14,44 @@
 
 int main(int ac, char *av[])
 {
-	int file = 1, i = 0;
+	int file, i;
 
 	ElfW(Ehdr) head;
 	/* Usage */
 	if (ac != 2)
 	{
-		printf("Usage: %s elf_filename\n", av[0]);
+		dprintf(1, "Usage: %s elf_filename\n", av[0]);
 		exit(98);
 	}
 	/* open file */
 	file = open(av[1], O_RDONLY);
 	if (file < 0)
 	{
-		printf("Can't open file: %s\n", av[1]);
+		dprintf(1, "Can't open file: %s\n", av[1]);
 		exit(98);
 	}
 	/* read file */
 	if (read(file, &head, sizeof(head)) < 0)
 	{
-		printf("Can't read file: %s\n", av[1]);
+		close(file);
+		if (file < 1)
+		{	
+			dprintf(1, "Can't close file: %s\n", av[1]);
+			exit(98);
+		}
+		dprintf(1, "Can't read file: %s\n", av[1]);
 		exit(98);
 	}
 	/* check if elf file */
 	if (!(head.e_ident[0] == 0x7f && head.e_ident[1] == 'E' && head.e_ident[2] == 'L' && head.e_ident[3] == 'F'))
 	{
-		printf("Unvalid file format: %s\n", av[1]);
+		close(file);
+		if (file < 1)
+		{	
+			dprintf(1, "Can't close file: %s\n", av[1]);
+			exit(98);
+		}
+		dprintf(1, "Unvalid file format: %s\n", av[1]);
 		exit(98);
 	}
 	/* Print header information */
@@ -48,7 +60,7 @@ int main(int ac, char *av[])
 	printf("Magic: ");
 	while (i < EI_NIDENT)
 		printf("%02x ", head.e_ident[i]), i++;
-	printf("\nClass: %s\n", (head.e_ident[EI_CLASS] == ELFCLASS32) ? "32" : "64");
+	printf("\nClass: %s\n", (head.e_ident[EI_CLASS] == ELFCLASS32) ? "32": "64");
 	printf("Data: %s\n", head.e_ident[EI_DATA] == ELFDATA2LSB ? "little" : " big");
 	printf("Version: %d\n", head.e_ident[EI_VERSION]);
 	printf("OS/ABI: %d\n", head.e_ident[EI_OSABI]);
@@ -57,6 +69,11 @@ int main(int ac, char *av[])
 	printf("Entry point address: %#lx\n", head.e_entry & 0xffffff);
 
 	/* close file */
+	close(file);
+	if (file < 1)
+	{	
+		dprintf(1, "Can't close file: %s\n", av[1]);
+		exit(98);
+	}
 	return (0);
-
 }
