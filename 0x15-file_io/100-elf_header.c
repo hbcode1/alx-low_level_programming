@@ -20,26 +20,26 @@ int main(int ac, char *av[])
 	/* Usage */
 	if (ac != 2)
 	{
-		dprintf(1, "Usage: %s elf_filename\n", av[0]);
+		printf("Usage: %s elf_filename\n", av[0]);
 		exit(98);
 	}
 	/* open file */
 	file = open(av[1], O_RDONLY);
 	if (file < 0)
 	{
-		dprintf(1, "Can't open file: %s\n", av[1]);
+		printf("Can't open file: %s\n", av[1]);
 		exit(98);
 	}
 	/* read file */
 	if (read(file, &head, sizeof(head)) < 0)
 	{
-		dprintf(1, "Can't read file: %s\n", av[1]);
+		printf("Can't read file: %s\n", av[1]);
 		exit(98);
 	}
 	/* check if elf file */
 	if (!(head.e_ident[0] == 0x7f && head.e_ident[1] == 'E' && head.e_ident[2] == 'L' && head.e_ident[3] == 'F'))
 	{
-		dprintf(1, "Unvalid file format: %s\n", av[1]);
+		printf("Unvalid file format: %s\n", av[1]);
 		exit(98);
 	}
 	/* Print header information */
