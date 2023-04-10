@@ -15,14 +15,9 @@
 int main(int ac, char *av[])
 {
 	int file, i;
-
 	Elf64_Ehdr head;
-	/* Usage */
-	if (ac != 2)
-	{
-		dprintf(1, "Usage: %s elf_filename\n", av[0]);
-		exit(98);
-	}
+
+	ac = ac;
 	/* open file */
 	file = open(av[1], O_RDONLY);
 	if (file < 0)
