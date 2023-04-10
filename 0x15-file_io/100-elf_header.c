@@ -1,13 +1,5 @@
 #include "main.h"
 
-/* machine bit for elf task */
-
-#if defined(__LP64__)
-#define ElfW(type) Elf64_ ## type
-#else
-#define ElfW(type) Elf32_ ## type
-#endif
-
 /**
  * main - Entry point
  * program that displays the information contained
@@ -24,7 +16,7 @@ int main(int ac, char *av[])
 {
 	int file, i;
 
-	ElfW(Ehdr) head;
+	Elf64_Ehdr head;
 	/* Usage */
 	if (ac != 2)
 	{
