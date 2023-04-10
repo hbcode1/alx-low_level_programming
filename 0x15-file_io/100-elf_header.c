@@ -14,7 +14,7 @@
 
 int main(int ac, char *av[])
 {
-	int file, i = 0;
+	int file = 1, i = 0;
 
 	ElfW(Ehdr) head;
 	/* Usage */
