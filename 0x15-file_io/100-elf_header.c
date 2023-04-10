@@ -138,7 +138,7 @@ int pstderr(int id, char *data)
 
 int main(int ac, char *av[])
 {
-	int file, i, c, v;
+	int file, i = 0, c = 0, v = 0;
 	Elf64_Ehdr head;
 
 	if (ac != 2)
