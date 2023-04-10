@@ -14,7 +14,7 @@
 
 int main(int ac, char *av[])
 {
-	int file, i;
+	int file, i, c;
 
 	Elf64_Ehdr head;
 	/* Usage */
@@ -33,8 +33,8 @@ int main(int ac, char *av[])
 	/* read file */
 	if (read(file, &head, sizeof(head)) < 0)
 	{
-		close(file);
-		if (file < 1)
+		c = close(file);
+		if (c < 1)
 		{
 			dprintf(1, "Can't close file: %s\n", av[1]);
 			exit(98);
@@ -45,8 +45,8 @@ int main(int ac, char *av[])
 	/* check if elf file */
 	if (!(head.e_ident[0] == 0x7f && head.e_ident[1] == 'E' && head.e_ident[2] == 'L' && head.e_ident[3] == 'F'))
 	{
-		close(file);
-		if (file < 1)
+		c = close(file);
+		if (c < 1)
 		{
 			dprintf(1, "Can't close file: %s\n", av[1]);
 			exit(98);
@@ -69,8 +69,8 @@ int main(int ac, char *av[])
 	printf("Entry point address: %#lx\n", head.e_entry & 0xffffff);
 
 	/* close file */
-	close(file);
-	if (file < 1)
+	c = close(file);
+	if (c < 1)
 	{
 		dprintf(1, "Can't close file: %s\n", av[1]);
 		exit(98);
