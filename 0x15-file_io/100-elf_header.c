@@ -101,23 +101,23 @@ int pstderr(int id, char *data)
 	switch (id)
 	{
 		case 0:
-			dprintf(1, "Usage: %s elf_filename\n", data);
+			dprintf(STDERR_FILENO, "Usage: %s elf_filename\n", data);
 			exit(98);
 			break;
 		case 1:
-			dprintf(1, "Can't open file: %s\n", data);
+			dprintf(STDERR_FILENO, "Can't open file: %s\n", data);
 			exit(98);
 			break;
 		case 2:
-			dprintf(1, "Can't read file: %s\n", data);
+			dprintf(STDERR_FILENO, "Can't read file: %s\n", data);
 			exit(98);
 			break;
 		case 3:
-			dprintf(1, "Can't close file: %s\n", data);
+			dprintf(STDERR_FILENO, "Can't close file: %s\n", data);
 			exit(98);
 			break;
 		default:
-			dprintf(1, "Unvalid file format: %s\n", data);
+			dprintf(STDERR_FILENO, "Unvalid file format: %s\n", data);
 			exit(98);
 			break;
 	}
@@ -171,7 +171,7 @@ int main(int ac, char *av[])
 			head.e_ident[EI_ABIVERSION]);
 	printf("  Type:                              %s\n", otype(head.e_type));
 	printf("  Entry point address:               %#lx\n",
-			head.e_entry & 0xfffffffff);
+			head.e_entry & 0xffffffff);
 
 	/* close file */
 	c = close(file);
