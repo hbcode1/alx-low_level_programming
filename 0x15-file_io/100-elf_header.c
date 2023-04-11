@@ -161,7 +161,7 @@ int main(int ac, char *av[])
 	printf("\n  Class:                             %s\n",
 			(head.e_ident[EI_CLASS] == ELFCLASS32) ? "ELF32" : "ELF64");
 	printf("  Data:                              2's complement, %s endian\n",
-			head.e_ident[EI_DATA] == ELFDATA2LSB ? "little" : " big");
+			head.e_ident[EI_DATA] == ELFDATA2LSB ? "little" : "big");
 	v = head.e_ident[EI_VERSION];
 	printf("  Version:                           %d%s\n",
 	v, v == EV_CURRENT ? " (current)" : "");
