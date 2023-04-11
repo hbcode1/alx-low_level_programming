@@ -140,6 +140,7 @@ int main(int ac, char *av[])
 {
 	int file, i = 0, c = 0, v = 0;
 	Elf64_Ehdr head;
+	unsigned long int ep;
 
 	if (ac != 2)
 		pstderr(0, av[0]);/* Usage */
@@ -170,8 +171,11 @@ int main(int ac, char *av[])
 	printf("  ABI Version:                       %d\n",
 			head.e_ident[EI_ABIVERSION]);
 	printf("  Type:                              %s\n", otype(head.e_type));
+	ep = head.e_entry;
+	if (head.e_ident[EI_DATA] != ELFDATA2LSB)
+		ep = (ep >> 24) | ((ep >> 8) & 0xFF00) | ((ep << 8) & 0xFF0000) | (ep << 24);
 	printf("  Entry point address:               %#lx\n",
-			head.e_entry & 0xffffffff);
+			ep & 0xFFFFFFF);
 
 	/* close file */
 	c = close(file);
