@@ -17,7 +17,7 @@ char *otype(int t)
 		case ET_EXEC:
 			return ("EXEC (Executable file)");
 		case ET_DYN:
-			return ("DYN (shared object file)");
+			return ("DYN (Shared object file)");
 		case ET_CORE:
 			return ("core file");
 		default:
@@ -38,7 +38,7 @@ char *os_abi(int oa)
 	switch (oa)
 	{
 		case ELFOSABI_NONE || ELFOSABI_SYSV:
-			return ("UNIX");
+			return ("UNIX - System V");
 		case ELFOSABI_HPUX:
 			return ("UNIX - HP-UX");
 		case ELFOSABI_NETBSD:
