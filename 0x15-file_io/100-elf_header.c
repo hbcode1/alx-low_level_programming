@@ -155,9 +155,9 @@ int main(int ac, char *av[])
 	}
 	checkfile(head.e_ident, file, av[1]);/* check if elf file */
 	printf("ELF Header:\n");
-	printf("  Magic:   ");/* print magic number */
+	printf("  Magic:  ");/* print magic number */
 	while (i < EI_NIDENT)
-		printf("%02x ", head.e_ident[i]), i++;
+		printf(" %02x", head.e_ident[i]), i++;
 	printf("\n  Class:                             %s\n",
 			(head.e_ident[EI_CLASS] == ELFCLASS32) ? "ELF32" : "ELF64");
 	printf("  Data:                              2's complement, %s endian\n",
