@@ -12,16 +12,16 @@ char *otype(int t)
 {
 	switch (t)
 	{
+		case ET_NONE:
+			return ("NONE (Unknown type)");
 		case ET_REL:
 			return ("REL (Relocatable file)");
-		case ET_EXEC:
-			return ("EXEC (Executable file)");
 		case ET_DYN:
 			return ("DYN (Shared object file)");
 		case ET_CORE:
 			return ("core file");
 		default:
-			return ("NONE (Unknown type)");
+			return ("EXEC (Executable file)");
 	}
 }
 /**
@@ -58,7 +58,7 @@ char *os_abi(int oa)
 		case ELFOSABI_STANDALONE:
 			return ("UNIX - Stand-alone (embedded)");
 		default:
-			return ("unknown");
+			return ("<unknown: 53>");
 	}
 }
 
@@ -145,7 +145,7 @@ int main(int ac, char *av[])
 		pstderr(0, av[0]);/* Usage */
 	file = open(av[1], O_RDONLY);/* open file */
 	if (file < 0)
-		pstderr(1, av[0]);
+		pstderr(1, av[1]);
 	if (read(file, &head, sizeof(head)) < 0)
 	{
 		c = close(file);
