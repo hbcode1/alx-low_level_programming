@@ -1,5 +1,22 @@
 #include "main.h"
+/**
+ * getep - return the right value of
+ * the entry point value for big and little endian
+ *
+ * @ep: Entry point value.
+ * @data: Data type.
+ *
+ * Return:
+ *	- converted value of Entry point.
+ */
 
+unsigned long int getep(unsigned long int ep, int data)
+{
+	if (data != ELFDATA2LSB)
+		ep = (ep >> 24) | ((ep >> 8) & 0xFF00) |
+			((ep << 8) & 0xFF0000) | (ep << 24);
+	return (ep);
+}
 /**
  * otype - return the object file type
  *
@@ -140,7 +157,6 @@ int main(int ac, char *av[])
 {
 	int file, i = 0, c = 0, v = 0;
 	Elf64_Ehdr head;
-	unsigned long int ep;
 
 	if (ac != 2)
 		pstderr(0, av[0]);/* Usage */
@@ -165,21 +181,19 @@ int main(int ac, char *av[])
 			head.e_ident[EI_DATA] == ELFDATA2LSB ? "little" : "big");
 	v = head.e_ident[EI_VERSION];
 	printf("  Version:                           %d%s\n",
-	v, v == EV_CURRENT ? " (current)" : "");
+			v, v == EV_CURRENT ? " (current)" : "");
 	printf("  OS/ABI:                            %s\n",
 			os_abi(head.e_ident[EI_OSABI]));
 	printf("  ABI Version:                       %d\n",
 			head.e_ident[EI_ABIVERSION]);
 	printf("  Type:                              %s\n", otype(head.e_type));
-	ep = head.e_entry;
-	if (head.e_ident[EI_DATA] != ELFDATA2LSB)
-		ep = (ep >> 24) | ((ep >> 8) & 0xFF00) | ((ep << 8) & 0xFF0000) | (ep << 24);
 	printf("  Entry point address:               %#lx\n",
-			ep & 0xFFFFFFF);
-
+			getep(head.e_entry, head.e_ident[EI_DATA]) & 0xFFFFFFF);
 	/* close file */
 	c = close(file);
 	if (c < 0)
 		pstderr(3, av[1]);
 	return (0);
 }
+
+
