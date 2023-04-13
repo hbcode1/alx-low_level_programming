@@ -23,12 +23,11 @@ int _getline(char **line, int *n, FILE* stream)
 	while(i < *n - 1)
 	{
 		c = getc(stream); /* read single char */
-		if (c == 10 || c == EOF) /* stop reading when EOF or new line */
+		if (c == EOF) /* stop reading when EOF or new line */
 			break;
 		buff[i] = (char)c; /* append character */
 		i++;
 	}
-	printf("%s\n", *line);
 	buff[i] = '\0'; /* terminate null*/
 	if (i == 0 || c == EOF) /* case empty input or EOF*/
 		return (-1);
@@ -46,7 +45,7 @@ int _getline(char **line, int *n, FILE* stream)
 */
 int main(void)
 {
-char *line;
+char *line = malloc(100);
 int cols = 2;
 
 printf("$ ");
