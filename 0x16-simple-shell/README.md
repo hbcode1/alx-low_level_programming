@@ -1,5 +1,5 @@
-### 0x16. C - Simple Shell
-##### This direcory containe exercices for a team project alled simple shell where the task is to write a UNIX command line interpreter.
+# 0x16. C - Simple Shell
+> This direcory containe exercices for a team project alled simple shell where the task is to write a UNIX command line interpreter.
 The acctual project repo is here [simple_shell](https://github.com/richie-omondi/simple_shell)
 ## Exercices
 ### PID & PPID
@@ -61,12 +61,10 @@ Using the return value of `fork`, it is possible to know if the current process 
 The `wait` system call (man 2 `wait`) suspends execution of the calling process until one of its children terminates.
 
 #### Exercise: fork + wait + execve
-------------------------------
 
 Write a program that executes the command `ls -l /tmp` in 5 different child processes. Each child should be created by the same process (the father). Wait for a child to exit before creating a new child.
 
 #### Exercise: super simple shell
-----------------------------
 
 Using everything we saw, write a first version of a super simple shell that can run commands with their full path, without any argument.
 
@@ -126,6 +124,7 @@ Actually, every process comes with an environment. When a new process is created
 *   via the global variable `environ` (man environ)
 
 ### main
+---------
 
 The `main` function could have 3 different prototypes:
 
