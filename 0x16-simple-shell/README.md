@@ -1,9 +1,13 @@
 # 0x16. C - Simple Shell
+
 > This direcory containe exercices for a team project alled simple shell where the task is to write a UNIX command line interpreter.
-The acctual project repo is here [simple_shell](https://github.com/richie-omondi/simple_shell)
+You can find the acctual project repo here [simple_shell](https://github.com/)
+
 ## Exercices
+
 ### PID & PPID
 ---------
+
 #### 0\. getppid
 
 Write a program that prints the PID of the parent process. Run your program several times within the same shell. It should be the same. Does `echo $$` print the same value? Why?
@@ -14,6 +18,7 @@ Write a shell script that prints the maximum value a process ID can be.
 
 ### Arguments
 ---------
+
 #### 0\. av
 
 Write a program that prints all the arguments, without using `ac`.
