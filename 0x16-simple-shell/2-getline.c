@@ -45,13 +45,13 @@ int _getline(char **line, int *n, FILE* stream)
 */
 int main(void)
 {
-char *line = malloc(100);
-int cols = 2;
+	char *line = malloc(100);
+	int cols = 2;
 
-printf("$ ");
-/* read standard input */
-while (_getline(&line, &cols, stdin) != -1)
-	printf("%s", line);
-free(line);
-return (0);
+	printf("$ ");
+	/* read standard input */
+	while (_getline(&line, &cols, stdin) != -1)
+		printf("%s", line);
+	free(line);
+	return (0);
 }
