@@ -20,4 +20,5 @@ typedef unsigned long int ul_i;
 /* Prototypes */
 int _putchar(char);
 u_i binary_to_uint(const char *binary);
+void print_binary(ul_i number);
 #endif /* end def main.h */
