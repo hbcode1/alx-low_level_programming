@@ -25,4 +25,5 @@ int get_bit(unsigned long int number, unsigned int index);
 int set_bit(unsigned long int *number, unsigned int index);
 int clear_bit(unsigned long int *number, unsigned int index);
 u_i flip_bits(unsigned long int number1, unsigned long int number2);
+int get_endianness(void);
 #endif /* end def main.h */
