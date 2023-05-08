@@ -13,7 +13,7 @@
 int main(int ac, char *av[])
 {
 	int fto, ffrom, s = 0, len = 0;
-	char buff[MAX_BUFF_SIZE];
+	char buff[MAX_BUFF];
 
 	if (ac != 3)
 	{
@@ -27,7 +27,7 @@ int main(int ac, char *av[])
 	fto = open(av[2], O_CREAT | O_TRUNC | O_WRONLY, 0664);
 	if (fto < 0 || !av[2])
 		print_error(99, av[2], 0);
-	while ((len = read(ffrom, buff, MAX_BUFF_SIZE)) > 0)
+	while ((len = read(ffrom, buff, MAX_BUFF)) > 0)
 	{
 
 		s = write(fto, buff, len);
