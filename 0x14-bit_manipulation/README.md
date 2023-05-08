@@ -1,1 +1,1 @@
-#Bit manipulation project folder
+# Bit manipulation
